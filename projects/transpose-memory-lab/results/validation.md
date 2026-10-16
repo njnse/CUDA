@@ -1,32 +1,38 @@
-# Validation status
+# Validation and measured configuration
 
-Validation performed on `login10.ufhpc` through an authenticated Windows SSH session on 2026-10-16. No GPU work was run on the login node and no Slurm job was submitted.
+Executed on 2026-10-16 using one NVIDIA L4, compute capability 8.9, 23,034 MiB visible memory. Driver: 580.178.04. CUDA compiler: 12.4.131; runtime: 12.4. GNU C++: 11.5.0. Compilation: `-std=c++17 -O3 -lineinfo -arch=sm_89`. Nsight Compute: 2026.1.1.0.
+
+Allocation: one GPU, two CPU cores, 4 GiB host memory. Benchmark/verification completed with exit 0 in eight seconds; focused profiling completed with exit 0 in three seconds. Requested walltime limits were 15 minutes and five minutes respectively.
 
 | Check | Result |
 |---|---|
-| Independent CPU known-answer / rectangular round-trip / invalid-input tests | PASS |
-| CUDA compilation, `nvcc -std=c++17 -O3 -lineinfo -arch=sm_89` | PASS; CUDA 12.4.131 |
-| CPU compiler | GNU C++ 11.5.0, C++17, `-O2 -Wall -Wextra -Werror` |
-| Python analysis tests | 3 tests PASS; median, invalid values and empty data |
-| Shell syntax checks | PASS for all three shell scripts |
-| CLI help | exit 0 |
-| Zero benchmark dimension / unknown mode | expected exit 1 before GPU initialization |
-| Slurm `sbatch --test-only` with account/QOS `eel4930`, 1 GPU, `l4` constraint | exit 0; controller found an L4 candidate in `hpg-turin` |
-| Actual GPU correctness / four sanitizer modes / profiler / timings | NOT RUN; GPU submission awaits user authorization |
+| Independent CPU known-answer, rectangular round-trip, invalid inputs | PASS |
+| CUDA compilation | PASS |
+| Python analysis tests | 3 PASS |
+| Shell syntax, CLI help, malformed-input rejection | PASS |
+| GPU correctness | 10 shapes x 4 paths; exact equality, poisoned outputs, guards, immutable input: PASS |
+| Compute Sanitizer memcheck / initcheck / synccheck | 0 errors each |
+| Compute Sanitizer racecheck | 0 errors and 0 warnings |
+| Uninstrumented timing | 4 shapes x 4 paths x 15 samples; raw CSV preserved |
+| Focused shared-memory counters | Both tiled paths captured; profiler exit 0 |
 
-The initial CUDA compilation failed on a deduced braced range; an explicit vector of dimension pairs fixed compatibility with this compiler. The final build passed. CPU tests are not GPU validation.
+## Timing and interpretation
 
-## Scheduling evidence
+Seed 2027; ten warmups/path; default-stream CUDA events; 100 launches/sample for 31 by 33 and ten for the other measured shapes. Allocation, transfers, verification and CPU computation are excluded; launch gaps are included. Paths use matched dimensions.
 
-Slurm 25.11.8 responded to read-only queries. The user association allows `eel4930` and `eel4930-b`; the former had `GrpTRES=cpu=32,gres/gpu=8,mem=250G`, while the latter had `gres/gpu=0`. The L4 feature is advertised by `hpg-turin`. These are snapshots, not reservations or guarantees of future allocation.
+See the README median table and `nvidia-l4-cuda12_4/benchmark/summary.csv` for dispersion. At 1024 by 1024, padded/naive acceleration was 9.82x and padded/unpadded-tiled acceleration was 2.27x. Padding did not improve the two larger tiled medians. Logical bandwidth can reflect cache traffic; it is not measured DRAM bandwidth.
 
-The controller's test-only message referred to prospective job 46154256 and node c0605a-s9. That identifier was part of the feasibility test, not evidence of an actual submitted or executed job. This project does not contain a measured GPU performance result.
+Separate profiling recorded 1,015,808 shared-load bank conflicts for unpadded tiling and zero for padding at 1024 by 1024. Shared-store conflicts were zero for both. Profiled launches were the correctness pass preceding the benchmark with identical dimensions and mappings. Instrumented application timings in the profile log are **not** used as performance results.
 
-## Source identity at validation
+One allocation, one GPU model, fixed path order and same-buffer replay limit generalization. Replicate with rotated order and other working-set sizes/devices before claiming broad acceleration.
+
+## Provenance and publication
+
+Measured source commit: `4a85f14da93dc03edc3d569f0ea85878b021e2fa`. The implementation is unchanged by the documentation/publication cleanup. SHA-256:
 
 ```text
 dc73ee8d3306fee2bf4bf1e2cd194a9d808125a086837462264e32d14b76bd0b  src/transpose.cu
 1a254b4d8060e7b388870c45a8f9187a72a0f7e8995526bf072a4221602673ad  include/reference.hpp
 ```
 
-Reproduce the outstanding checks using the checked-in Slurm script after GPU submission is authorized. The script records the actual source commit, hashes, device, driver and toolkit for that future run.
+Logs in `nvidia-l4-cuda12_4/` are sanitized publication copies. Account/machine names, allocation identifiers and absolute user paths are omitted. Numerical measurements, hashes, versions and pass/fail evidence are preserved. Original operational logs remain in private execution storage. The profiling script was added after the measured source commit; binary/source hashes link the profile to the tested implementation.

@@ -4,7 +4,7 @@
 
 Can a small CUDA sample help a developer distinguish indexing bugs, unsupported environments and workload-dependent performance without requiring an expert to interpret a single speedup number?
 
-This is a portfolio experiment, not NVIDIA user research. The internship responsibilities were supplied by the user. No customer interviews, adoption metrics or competitive benchmarks have been collected.
+This is a technical experiment. No customer interviews, adoption metrics or competitive benchmarks have been collected.
 
 ## Implemented evidence
 
@@ -12,13 +12,13 @@ This is a portfolio experiment, not NVIDIA user research. The internship respons
 - Independent exact oracle, edge shapes, poisoned outputs, write guards and input-immutability checks.
 - `--diagnose` reports the device, compute capability, runtime version and driver API version. Driver API version is not a complete compatibility assessment; retain `nvidia-smi` and the toolkit version too.
 - Missing GPU / driver is distinguished by exit 77 and a diagnostic message; invalid CLI input and CUDA errors return 1.
-- Raw timing samples and summary dispersion are preserved. GPU evidence remains pending until a compute-node run succeeds.
+- Raw timing samples, summary dispersion, correctness and four sanitizer reports are preserved alongside focused hardware counters.
 
 ## Observations versus hypotheses
 
-Observed in the current session: Windows SSH with user-approved Duo authentication reaches HiPerGator; CUDA 12.4.131 and GNU C++ 11.5.0 are available. Slurm recognizes the user's `eel4930` account and two QOS entries. These observations establish tooling access, not GPU performance.
+Observed on NVIDIA L4 with CUDA 12.4.131 and driver 580.178.04: ten verification shapes and four sanitizer tools passed. At 1024 by 1024, padded transpose took a median 0.005453 ms versus 0.012362 ms for unpadded tiling and 0.053533 ms for naive transpose. Separate profiling measured 1,015,808 shared-load bank conflicts for unpadded tiling and zero for padding. The tiled paths were essentially tied at the two larger shapes.
 
-Hypotheses to test: padding will reduce bank-conflict overhead in appropriate larger matrices; tiny shapes will be dominated by launch costs; explicit diagnostics and reproduction metadata may reduce support ambiguity. The latter is a product hypothesis requiring user testing, not an outcome measured here.
+The counters support the bank-conflict explanation for the profiled shape. Hypotheses still to test include cache and launch-overhead effects on other shapes/devices, and whether explicit diagnostics reduce support ambiguity. Developer usability has not been measured.
 
 ## Alternatives
 
@@ -41,4 +41,4 @@ No measured library comparison exists. A useful next evaluation could add a pinn
 
 ## Recommendation and next decision
 
-Keep the explicit diagnostic and evidence contract in the portfolio. Defer claims about measured speedups or developer productivity. After an authorized L4 run, evaluate correctness and profiler evidence before deciding whether padding should be the recommended tutorial default. If build compatibility fails on another GPU generation, capture a minimal compiler/runtime reproduction before changing target-selection behavior.
+Keep padding as an explained teaching example and preserve the unpadded comparator. Report shape-specific measurements rather than a universal speedup. Rotate benchmark order, repeat allocations, evaluate more architectures and conduct a developer usability check before broadening the recommendation.

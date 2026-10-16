@@ -1,0 +1,2 @@
+device=NVIDIA L4 cc=8.9 runtime=12040 driver_api=13020 seed=2027
+PASS shape=4093x2051 variants=4 guards=pass

@@ -6,10 +6,9 @@ Four paths isolate useful effects: coalesced copy (bandwidth context), naive tra
 
 ## Build and validate
 
-On HiPerGator, build on the login node but run GPU commands inside a compute allocation:
+Build with CUDA 12.4 or a compatible toolkit. Run GPU commands on a supported GPU:
 
 ```bash
-module load cuda/12.4.1
 bash projects/transpose-memory-lab/scripts/build.sh
 python3 -m unittest discover -s projects/transpose-memory-lab/tests -p 'test_*.py' -v
 # The following are GPU-allocation commands:
@@ -19,7 +18,7 @@ projects/transpose-memory-lab/build/transpose_lab --benchmark 4093 2051 15 > mea
 python3 projects/transpose-memory-lab/scripts/analyze.py measured.csv
 ```
 
-The default target is `sm_89` for L4. Set `CUDA_ARCH=sm_XX` to a target supported by your compiler and allocated GPU. CUDA 12.4 should not be assumed to support every newer HiPerGator GPU. The build script does not select a GPU or request an allocation.
+The default target is `sm_89` for L4. Set `CUDA_ARCH=sm_XX` to a target supported by your compiler and GPU. The build script does not request an allocation.
 
 ## Slurm reproduction
 
@@ -27,12 +26,11 @@ From the repository root:
 
 ```bash
 # Validate scheduling feasibility without creating a job:
-sbatch --test-only projects/transpose-memory-lab/scripts/hipergator.sbatch
-# Submit only when authorized:
-sbatch --constraint=l4 projects/transpose-memory-lab/scripts/hipergator.sbatch
+sbatch --account=YOUR_ACCOUNT --test-only projects/transpose-memory-lab/scripts/slurm.sbatch
+sbatch --account=YOUR_ACCOUNT projects/transpose-memory-lab/scripts/slurm.sbatch
 ```
 
-The account and default QOS are `eel4930`. The checked `eel4930-b` QOS has a group GPU limit of zero and is not a GPU fallback. No partition is hard-coded. The `l4` feature was verified on `hpg-turin`; recheck site features before submitting. Submission does not guarantee immediate allocation. The full script builds, verifies, benchmarks four shapes and runs four Compute Sanitizer tools. Missing sanitizer tools fail the script rather than silently claim coverage. Results go under `results/local/slurm-JOBID/`, which is excluded from Git until deliberately selected and reviewed.
+Supply your site's account, QOS, GPU constraint and CUDA environment. This example requests one GPU, two CPU cores, 4 GiB memory and 15 minutes. Adapt the `l4` constraint to your site. It embeds no connection settings. The script builds, verifies, benchmarks four shapes and runs four Compute Sanitizer tools. Results go under `results/local/slurm-JOBID/`, excluded from Git until deliberately selected and sanitized.
 
 ## Evidence and scope
 
@@ -44,3 +42,16 @@ The account and default QOS are `eel4930`. The checked `eel4930-b` QOS has a gro
 - Fixed variant order and same-buffer replay can bias clock/cache conditions. Rotate order and use a working set larger than cache before making stronger hardware claims. No library baseline or cross-device claim is provided.
 
 See [validation](results/validation.md), [tutorial](docs/developer-tutorial.md), [product brief](docs/product-brief.md) and [profiling protocol](docs/profiling.md).
+
+## Measured configuration and results
+
+NVIDIA L4 (compute capability 8.9, 23,034 MiB visible memory), driver 580.178.04, CUDA Toolkit 12.4.131, runtime 12.4, GNU C++ 11.5.0; `-std=c++17 -O3 -lineinfo -arch=sm_89`. Block shape: 32 by 8. Shared tiles: 32 by 32 or 32 by 33. Medians below are milliseconds per launch from 15 uninstrumented samples.
+
+| Rows x columns | Naive | Tiled | Padded | Naive / padded |
+|---|---:|---:|---:|---:|
+| 31 x 33 | 0.002486 | 0.002171 | 0.001792 | 1.39x |
+| 1024 x 1024 | 0.053533 | 0.012362 | 0.005453 | 9.82x |
+| 4093 x 2051 | 0.426669 | 0.285491 | 0.286106 | 1.49x |
+| 4096 x 4096 | 0.856986 | 0.585114 | 0.585728 | 1.46x |
+
+Ten verification shapes and four sanitizer modes passed. Separate Nsight Compute profiling of 1024 by 1024 measured 1,015,808 shared-load bank conflicts in the unpadded tiled kernel and zero in the padded kernel. Larger measured shapes showed essentially tied tiled medians. Fixed order, cache residency and one-device coverage limit generalization. See [sanitized evidence](results/nvidia-l4-cuda12_4/).

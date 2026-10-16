@@ -1,9 +1,8 @@
 # CUDA engineering portfolio
 
 Reproducible CUDA experiments for developer education and evidence-based product decisions.
-Targets the user-supplied NVIDIA CUDA Technical Marketing Engineering and CUDA Toolkit / Compute Driver Technical Product Management internship responsibilities.
 
-| Project | Engineering question | TME / TPM evidence |
+| Project | Engineering question | Evidence |
 |---|---|---|
 | [Transpose memory lab](projects/transpose-memory-lab/) | How do coalescing and shared-memory padding affect rectangular transpose? | Runnable tutorial, independent oracle, timing protocol, diagnostics and product acceptance criteria |
 
@@ -19,4 +18,4 @@ Each project separates source/build validation from actual GPU correctness and p
 
 Next candidates: streaming transfers, CUDA Graph break-even, runtime/driver diagnostics, reduction accuracy, compiler regression minimization. Avoid repeating a topic without a new engineering question.
 
-The [CPU CI example](docs/cpu-ci-example.yml) is documentation, not an active workflow. The current GitHub OAuth credential lacks workflow-write scope. The CPU checks were run directly on HiPerGator; no GitHub Actions success is claimed.
+The [CPU CI example](docs/cpu-ci-example.yml) is documentation, not an active workflow. CPU and GPU checks were executed directly; no GitHub Actions success is claimed.

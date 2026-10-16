@@ -1,0 +1,7 @@
+==PROF== Connected to process 752178 (projects/transpose-memory-lab/build/transpose_lab)
+==PROF== Disconnected from process 752178
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","752178","transpose_lab","127.0.0.1","void tiled_kernel<0>(const float *, float *, int, int)","1","7","(32, 8, 1)","(32, 32, 1)","0","8.9","Command line profiler metrics","l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum","","1,015,808"
+"0","752178","transpose_lab","127.0.0.1","void tiled_kernel<0>(const float *, float *, int, int)","1","7","(32, 8, 1)","(32, 32, 1)","0","8.9","Command line profiler metrics","l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum","","0"
+"1","752178","transpose_lab","127.0.0.1","void tiled_kernel<1>(const float *, float *, int, int)","1","7","(32, 8, 1)","(32, 32, 1)","0","8.9","Command line profiler metrics","l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum","","0"
+"1","752178","transpose_lab","127.0.0.1","void tiled_kernel<1>(const float *, float *, int, int)","1","7","(32, 8, 1)","(32, 32, 1)","0","8.9","Command line profiler metrics","l1tex__data_bank_conflicts_pipe_lsu_mem_shared_op_st.sum","","0"
