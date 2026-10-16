@@ -1,7 +1,6 @@
 # CUDA engineering portfolio
 
 Reproducible CUDA experiments for developer education and evidence-based product decisions.
-Targets the user-supplied NVIDIA CUDA Technical Marketing Engineering and CUDA Toolkit / Compute Driver Technical Product Management internship responsibilities.
 
 | Project | Engineering question | TME / TPM evidence |
 |---|---|---|
