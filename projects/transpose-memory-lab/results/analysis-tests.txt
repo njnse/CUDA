@@ -1,0 +1,8 @@
+test_median_not_mean (test_analysis.AnalysisTests) ... ok
+test_reject_empty (test_analysis.AnalysisTests) ... ok
+test_reject_invalid_measurements (test_analysis.AnalysisTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

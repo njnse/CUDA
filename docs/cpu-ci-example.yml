@@ -1,0 +1,14 @@
+# Example only: copy to .github/workflows/cpu.yml with workflow-write authorization.
+name: CPU contracts
+on: [push, pull_request]
+jobs:
+  reference-and-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent reference
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror -Iprojects/transpose-memory-lab/include projects/transpose-memory-lab/tests/reference_test.cpp -o /tmp/transpose_reference
+          /tmp/transpose_reference
+      - name: Analysis contracts
+        run: python3 -m unittest discover -s projects/transpose-memory-lab/tests -p 'test_*.py' -v
