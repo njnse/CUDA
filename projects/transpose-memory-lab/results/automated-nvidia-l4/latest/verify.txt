@@ -1,0 +1,11 @@
+device=NVIDIA L4 cc=8.9 runtime=12040 driver_api=13020 seed=2027
+PASS shape=1x1 variants=4 guards=pass
+PASS shape=1x65 variants=4 guards=pass
+PASS shape=65x1 variants=4 guards=pass
+PASS shape=31x33 variants=4 guards=pass
+PASS shape=32x32 variants=4 guards=pass
+PASS shape=33x31 variants=4 guards=pass
+PASS shape=65x97 variants=4 guards=pass
+PASS shape=257x513 variants=4 guards=pass
+PASS shape=1024x1024 variants=4 guards=pass
+PASS shape=1025x2049 variants=4 guards=pass
