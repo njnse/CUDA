@@ -9,9 +9,9 @@ Acceptance criteria:
 4. Setup is excluded from steady-state replay and included explicitly in the amortization calculation.
 5. The single-kernel fused path is a required comparator; an eager-only speedup is insufficient evidence for recommending graphs.
 
-Observations: implementation provides these comparisons and tests. Actual GPU results are pending in this revision.
+Observations: all five lengths and three implementations passed full-array correctness and all four sanitizer tools. Graph replay improved measured eager wall time by about 1.06x to 1.36x. Fusion was fastest at every tested length. See the README table and raw samples.
 
-Hypotheses: graph replay can reduce repeated host submission cost; fusion can outperform both two-kernel paths; for larger inputs, memory traffic can dominate. These are hypotheses until measured.
+Interpretation: the measurements support reduced submission overhead for graph replay and lower overall cost for fusion in this specific pointwise pipeline. Cross-device behavior, workload changes, concurrent replay and application-wide impact remain untested.
 
 Alternatives: ordinary launches minimize setup and shape-management complexity; graphs amortize stable dependency structures but retain lifetime/update obligations; fusion removes launches and intermediate traffic but may be impractical across library boundaries or independently maintained operations.
 

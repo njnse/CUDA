@@ -32,8 +32,26 @@ An illustrative amortization count is `ceil(setup_us / (eager_wall_us - graph_wa
 
 ## Evidence
 
-GPU validation and actual measurements are pending for this revision. No speedup is claimed until actual results are published. The server worker will place sanitized evidence in `results/automated-nvidia-l4/latest/`.
+GPU correctness, four sanitizer tools and actual timing passed. Sanitized evidence is available in `results/automated-nvidia-l4/latest/`.
 
 See [developer tutorial](docs/tutorial.md) and [engineering analysis](docs/engineering-analysis.md).
 
 Reference: [NVIDIA CUDA Runtime Graph API](https://docs.nvidia.com/cuda/cuda-runtime-api/cuda_runtime_api/group__CUDART__GRAPH.html).
+
+## Measured NVIDIA L4 results
+
+NVIDIA L4, compute capability 8.9, 23,034 MiB visible device memory; driver 580.178.04; CUDA Toolkit 12.4.131; runtime 12.4. Build: C++17, -O3 -lineinfo -arch=sm_89. Block size: 256 threads. Inputs are deterministic dyadic values based on element index, with no random seed. Table values are medians from 15 rotated-order samples; host wall time is synchronized and normalized per pipeline.
+
+| Elements | Eager wall us | Graph wall us | Fused wall us | Eager / Graph | Setup us | Illustrative break-even |
+|---|---:|---:|---:|---:|---:|---:|
+| 1 | 3.275 | 2.427 | 1.652 | 1.35x | 195.427 | 231 |
+| 31 | 3.319 | 2.435 | 1.683 | 1.36x | 26.100 | 30 |
+| 257 | 3.334 | 2.475 | 1.678 | 1.35x | 20.502 | 24 |
+| 4096 | 3.322 | 2.575 | 1.670 | 1.29x | 24.738 | 34 |
+| 1048576 | 12.242 | 11.544 | 6.212 | 1.06x | 22.104 | 32 |
+
+Graph replay reduced measured eager wall time at every tested length, but fusion was fastest at every length. The fused comparator removes temporary memory traffic and a launch. The two-kernel graph path cannot obtain that benefit merely by replaying the dependency graph.
+
+Break-even is an illustration from one observed setup duration per length and the difference of measured median wall times. It is not a confidence interval or a guaranteed application crossover. First-shape setup includes one-time effects, and fixed-address replay benefits from a stable workload.
+
+Compilation, the independent CPU test and three Python tests passed. Five input lengths times three implementations passed exact full-array comparison, output/temporary guards and input-immutability checks. memcheck, initcheck and synccheck reported zero errors; racecheck reported zero errors and warnings. No Nsight trace was collected for this revision; the event and host timing logs are the performance evidence.

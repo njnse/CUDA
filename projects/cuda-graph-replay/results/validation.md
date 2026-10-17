@@ -1,9 +1,17 @@
-# Validation status
+# Validation record
 
-Source and documentation are published. The Python analysis tests were executed and passed: median aggregation, empty-input rejection and invalid/non-finite timing rejection (3 tests).
+GPU execution and publication completed successfully. The tested source is identified in automated-nvidia-l4/latest/source-commit.txt and source-sha256.txt; execution metadata is in validation.json.
 
-CUDA compilation, the compiled CPU reference test, GPU correctness, all four sanitizer modes and performance measurement have not yet been completed for this project. No GPU speedup or setup amortization result is claimed.
+- CUDA compilation and compiled CPU known-answer/tail/invalid-input tests: PASS.
+- Python analysis tests: 3 PASS.
+- GPU exact full-array comparisons: 5 lengths x 3 implementations, PASS.
+- Output/temporary guards and input immutability: PASS.
+- memcheck, initcheck, synccheck: 0 errors each.
+- racecheck: 0 errors, 0 warnings.
+- Benchmark: 225 raw samples, 15 per length and implementation, rotating path order.
+- Capture, instantiate and upload durations recorded separately for each length.
+- Nsight profiling: not executed.
 
-The run script is compatible with the repository's GPU worker contract: it uses an existing allocation, honors RESULTS_DIR, records source hashes and environment data, and fails on unsuccessful checks. A passing worker run will publish sanitized evidence under results/automated-nvidia-l4/latest/.
+An initial attempt failed exact comparison at the largest input. Its input/poison copies used the default stream while kernels used a nonblocking stream. The fix queues H2D copies on the execution stream and synchronizes initial input before capture. The same large-input check and all sanitizers pass after the fix. Tolerance was not widened.
 
-Measure the eager, graph and fused paths on the same inputs. Report graph capture, instantiate and upload cost separately. Recompute conclusions from raw samples; do not reuse the transpose project's measurements.
+Public evidence omits connection identifiers, absolute personal paths and machine/account names. Measurements, source hashes, GPU/driver/toolkit information and pass/fail output are preserved. Performance scope and limitations are described in the README; results apply to this workload and device.
