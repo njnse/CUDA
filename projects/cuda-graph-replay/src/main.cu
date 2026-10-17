@@ -27,8 +27,10 @@ void experiment(int n,bool bench) {
     for(int i=0;i<n;++i)x[i]=float((i%2049)-1024)/256.0f;
     auto expected=reference(x);
     Device input(n),temp(guarded),output(guarded);
-    ck(cudaMemcpy(input.p,x.data(),bytes,cudaMemcpyHostToDevice));
+
     cudaStream_t stream;ck(cudaStreamCreateWithFlags(&stream,cudaStreamNonBlocking));
+    ck(cudaMemcpyAsync(input.p,x.data(),bytes,cudaMemcpyHostToDevice,stream));
+    ck(cudaStreamSynchronize(stream));
     auto eager=[&] {
         affine<<<(n+255)/256,256,0,stream>>>(input.p,temp.p+GUARD,n);ck(cudaGetLastError());
         relu<<<(n+255)/256,256,0,stream>>>(temp.p+GUARD,output.p+GUARD,n);ck(cudaGetLastError());
@@ -57,11 +59,11 @@ void experiment(int n,bool bench) {
     for(int mode=0;mode<3;++mode) {
         std::fill(init.begin(),init.end(),SENTINEL);
         std::fill(init.begin()+GUARD,init.begin()+GUARD+n,std::numeric_limits<float>::quiet_NaN());
-        ck(cudaMemcpy(temp.p,init.data(),guarded*sizeof(float),cudaMemcpyHostToDevice));
-        ck(cudaMemcpy(output.p,init.data(),guarded*sizeof(float),cudaMemcpyHostToDevice));
+        ck(cudaMemcpyAsync(temp.p,init.data(),guarded*sizeof(float),cudaMemcpyHostToDevice,stream));
+        ck(cudaMemcpyAsync(output.p,init.data(),guarded*sizeof(float),cudaMemcpyHostToDevice,stream));
         launch(mode);ck(cudaStreamSynchronize(stream));
         ck(cudaMemcpy(y.data(),output.p,guarded*sizeof(float),cudaMemcpyDeviceToHost));
-        for(int i=0;i<n;++i)if(y[i+GUARD]!=expected[i])throw std::runtime_error("output mismatch");
+        for(int i=0;i<n;++i)if(y[i+GUARD]!=expected[i])throw std::runtime_error(std::string(names[mode])+" mismatch at "+std::to_string(i)+" actual="+std::to_string(y[i+GUARD])+" expected="+std::to_string(expected[i]));
         for(int g=0;g<GUARD;++g)if(y[g]!=SENTINEL||y[n+GUARD+g]!=SENTINEL)throw std::runtime_error("output guard");
         ck(cudaMemcpy(y.data(),temp.p,guarded*sizeof(float),cudaMemcpyDeviceToHost));
         for(int g=0;g<GUARD;++g)if(y[g]!=SENTINEL||y[n+GUARD+g]!=SENTINEL)throw std::runtime_error("temporary guard");
