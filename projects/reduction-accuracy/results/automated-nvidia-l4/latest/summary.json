@@ -1,0 +1,677 @@
+[
+  {
+    "n": 257,
+    "dataset": "cancellation",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.0020383999217301607,
+        "min": 0.002013866789638996,
+        "max": 0.002047999994829297,
+        "iqr": 3.413320519030094e-05
+      },
+      "host_ms": {
+        "median": 0.0022164,
+        "min": 0.0021839999999999997,
+        "max": 0.0022975,
+        "iqr": 2.9066666666667084e-05
+      }
+    },
+    "max_abs_error": 128.0,
+    "max_error_over_sum_abs": 9.922480521699418e-09,
+    "reference_sum": 100000128.0,
+    "sum_abs": 12900000128.0,
+    "cancellation_condition": 128.99983616020972
+  },
+  {
+    "n": 257,
+    "dataset": "cancellation",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.003948799800127745,
+        "min": 0.0039253332652151585,
+        "max": 0.003959466703236103,
+        "iqr": 2.8800219297409058e-05
+      },
+      "host_ms": {
+        "median": 0.0041253,
+        "min": 0.0041089333333333335,
+        "max": 0.004141333333333334,
+        "iqr": 1.203333333333386e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 100000128.0,
+    "sum_abs": 12900000128.0,
+    "cancellation_condition": 128.99983616020972
+  },
+  {
+    "n": 257,
+    "dataset": "cancellation",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005120000336319208,
+        "min": 0.005120000336319208,
+        "max": 0.005154133308678865,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.005329833333333334,
+        "min": 0.005325133333333333,
+        "max": 0.005348166666666667,
+        "iqr": 1.3666666666666168e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 100000128.0,
+    "sum_abs": 12900000128.0,
+    "cancellation_condition": 128.99983616020972
+  },
+  {
+    "n": 257,
+    "dataset": "dyadic",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.0021109331864863634,
+        "min": 0.002082133200019598,
+        "max": 0.0022527999244630337,
+        "iqr": 3.4133438020944595e-05
+      },
+      "host_ms": {
+        "median": 0.0022891666666666668,
+        "min": 0.0022791333333333336,
+        "max": 0.0024697666666666667,
+        "iqr": 2.6033333333333117e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 213.0,
+    "sum_abs": 8193.25,
+    "cancellation_condition": 38.46596244131455
+  },
+  {
+    "n": 257,
+    "dataset": "dyadic",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.0039253332652151585,
+        "min": 0.0038912000600248575,
+        "max": 0.0039253332652151585,
+        "iqr": 0.0
+      },
+      "host_ms": {
+        "median": 0.004115933333333334,
+        "min": 0.004103933333333334,
+        "max": 0.0041313,
+        "iqr": 7.033333333333197e-06
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 213.0,
+    "sum_abs": 8193.25,
+    "cancellation_condition": 38.46596244131455
+  },
+  {
+    "n": 257,
+    "dataset": "dyadic",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005152000114321709,
+        "min": 0.005120000336319208,
+        "max": 0.005154133308678865,
+        "iqr": 3.3066608011722565e-05
+      },
+      "host_ms": {
+        "median": 0.0053327999999999995,
+        "min": 0.005303433333333333,
+        "max": 0.0053388,
+        "iqr": 1.0366666666665816e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 213.0,
+    "sum_abs": 8193.25,
+    "cancellation_condition": 38.46596244131455
+  },
+  {
+    "n": 257,
+    "dataset": "positive",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.002013866789638996,
+        "min": 0.0019797333516180515,
+        "max": 0.002047999994829297,
+        "iqr": 2.8799986466765404e-05
+      },
+      "host_ms": {
+        "median": 0.0022056999999999997,
+        "min": 0.002193333333333333,
+        "max": 0.0022301,
+        "iqr": 1.76666666666667e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 369.0,
+    "sum_abs": 369.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 257,
+    "dataset": "positive",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.0039253332652151585,
+        "min": 0.0039253332652151585,
+        "max": 0.0039519998244941235,
+        "iqr": 2.5600194931030273e-05
+      },
+      "host_ms": {
+        "median": 0.004119266666666666,
+        "min": 0.0041063,
+        "max": 0.004229800000000001,
+        "iqr": 1.1699999999999905e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 369.0,
+    "sum_abs": 369.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 257,
+    "dataset": "positive",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005154133308678865,
+        "min": 0.005120000336319208,
+        "max": 0.0051818666979670525,
+        "iqr": 1.066364347934723e-06
+      },
+      "host_ms": {
+        "median": 0.0053461333333333335,
+        "min": 0.005330833333333334,
+        "max": 0.0053645333333333335,
+        "iqr": 1.0733333333333775e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 369.0,
+    "sum_abs": 369.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 65537,
+    "dataset": "cancellation",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.004232533276081085,
+        "min": 0.004164266400039196,
+        "max": 0.004505599848926067,
+        "iqr": 5.333218723535538e-06
+      },
+      "host_ms": {
+        "median": 0.004437766666666666,
+        "min": 0.004391366666666666,
+        "max": 0.0047262,
+        "iqr": 9.700000000000507e-06
+      }
+    },
+    "max_abs_error": 28672.0,
+    "max_error_over_sum_abs": 8.74973289184557e-09,
+    "reference_sum": 100032768.0,
+    "sum_abs": 3276900032768.0,
+    "cancellation_condition": 32758.266099044664
+  },
+  {
+    "n": 65537,
+    "dataset": "cancellation",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005014399997889996,
+        "min": 0.004983467049896717,
+        "max": 0.005256533157080412,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.0052026,
+        "min": 0.005194933333333333,
+        "max": 0.005477033333333334,
+        "iqr": 1.3033333333333993e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 100032768.0,
+    "sum_abs": 3276900032768.0,
+    "cancellation_condition": 32758.266099044664
+  },
+  {
+    "n": 65537,
+    "dataset": "cancellation",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.008055467158555984,
+        "min": 0.008055467158555984,
+        "max": 0.008089600130915642,
+        "iqr": 2.4532899260520935e-05
+      },
+      "host_ms": {
+        "median": 0.0082723,
+        "min": 0.008260966666666666,
+        "max": 0.008276633333333333,
+        "iqr": 6.666666666666973e-06
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 100032768.0,
+    "sum_abs": 3276900032768.0,
+    "cancellation_condition": 32758.266099044664
+  },
+  {
+    "n": 65537,
+    "dataset": "dyadic",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.0042048003524541855,
+        "min": 0.004198400303721428,
+        "max": 0.004334933590143919,
+        "iqr": 0.00010239984840154648
+      },
+      "host_ms": {
+        "median": 0.004420433333333334,
+        "min": 0.0043964,
+        "max": 0.004556966666666666,
+        "iqr": 9.883333333333445e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 10137.5,
+    "sum_abs": 2093340.25,
+    "cancellation_condition": 206.4947225647349
+  },
+  {
+    "n": 65537,
+    "dataset": "dyadic",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.004983467049896717,
+        "min": 0.004949333146214485,
+        "max": 0.004983467049896717,
+        "iqr": 2.1336600184440613e-06
+      },
+      "host_ms": {
+        "median": 0.005181233333333333,
+        "min": 0.0051675666666666665,
+        "max": 0.005206966666666666,
+        "iqr": 1.936666666666701e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 10137.5,
+    "sum_abs": 2093340.25,
+    "cancellation_condition": 206.4947225647349
+  },
+  {
+    "n": 65537,
+    "dataset": "dyadic",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.008021333254873753,
+        "min": 0.007987200282514095,
+        "max": 0.008050133474171162,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.008219866666666667,
+        "min": 0.0081855,
+        "max": 0.008234233333333334,
+        "iqr": 1.5333333333332477e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 10137.5,
+    "sum_abs": 2093340.25,
+    "cancellation_condition": 206.4947225647349
+  },
+  {
+    "n": 65537,
+    "dataset": "positive",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.004232533276081085,
+        "min": 0.004190933424979448,
+        "max": 0.004300800152122974,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.004430766666666667,
+        "min": 0.0043827,
+        "max": 0.0045025333333333336,
+        "iqr": 2.8400000000000473e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 94209.0,
+    "sum_abs": 94209.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 65537,
+    "dataset": "positive",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005017600022256374,
+        "min": 0.004983467049896717,
+        "max": 0.005017600022256374,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.005208266666666667,
+        "min": 0.005190933333333333,
+        "max": 0.005230633333333333,
+        "iqr": 1.4033333333333259e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 94209.0,
+    "sum_abs": 94209.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 65537,
+    "dataset": "positive",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.008086400106549263,
+        "min": 0.008021333254873753,
+        "max": 0.008114133030176163,
+        "iqr": 3.413297235965729e-05
+      },
+      "host_ms": {
+        "median": 0.008273966666666667,
+        "min": 0.008244233333333333,
+        "max": 0.0083127,
+        "iqr": 1.070000000000064e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 94209.0,
+    "sum_abs": 94209.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "cancellation",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005771733354777098,
+        "min": 0.005767466500401497,
+        "max": 0.005801600404083729,
+        "iqr": 7.466878741979599e-06
+      },
+      "host_ms": {
+        "median": 0.005960099999999999,
+        "min": 0.005945433333333333,
+        "max": 0.0059838,
+        "iqr": 1.3333333333333947e-05
+      }
+    },
+    "max_abs_error": 458752.0,
+    "max_error_over_sum_abs": 8.749999912500002e-09,
+    "reference_sum": 524288.0,
+    "sum_abs": 52428800524288.0,
+    "cancellation_condition": 100000001.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "cancellation",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.009549867361783981,
+        "min": 0.009523199871182442,
+        "max": 0.009557333774864674,
+        "iqr": 3.093387931585312e-05
+      },
+      "host_ms": {
+        "median": 0.0097282,
+        "min": 0.009716200000000001,
+        "max": 0.009741533333333333,
+        "iqr": 8.700000000000374e-06
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 524288.0,
+    "sum_abs": 52428800524288.0,
+    "cancellation_condition": 100000001.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "cancellation",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.025702398270368576,
+        "min": 0.025668267160654068,
+        "max": 0.025702398270368576,
+        "iqr": 8.530914783477783e-06
+      },
+      "host_ms": {
+        "median": 0.02587916666666667,
+        "min": 0.025872166666666665,
+        "max": 0.025900199999999998,
+        "iqr": 1.2399999999999217e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 524288.0,
+    "sum_abs": 52428800524288.0,
+    "cancellation_condition": 100000001.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "dyadic",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005797333549708128,
+        "min": 0.005761066451668739,
+        "max": 0.0058026667684316635,
+        "iqr": 3.1999778002500534e-05
+      },
+      "host_ms": {
+        "median": 0.0059664666666666664,
+        "min": 0.005938066666666667,
+        "max": 0.005983133333333333,
+        "iqr": 6.666666666666973e-06
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 81125.0625,
+    "sum_abs": 33565976.0625,
+    "cancellation_condition": 413.7559347026697
+  },
+  {
+    "n": 1048576,
+    "dataset": "dyadic",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.009556266479194164,
+        "min": 0.009546666406095028,
+        "max": 0.009591465815901756,
+        "iqr": 7.466413080692291e-06
+      },
+      "host_ms": {
+        "median": 0.009734866666666666,
+        "min": 0.0097192,
+        "max": 0.009766233333333334,
+        "iqr": 1.066666666666577e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 81125.0625,
+    "sum_abs": 33565976.0625,
+    "cancellation_condition": 413.7559347026697
+  },
+  {
+    "n": 1048576,
+    "dataset": "dyadic",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.025700267404317856,
+        "min": 0.025668267160654068,
+        "max": 0.025774933397769928,
+        "iqr": 3.6265701055526733e-05
+      },
+      "host_ms": {
+        "median": 0.02587786666666667,
+        "min": 0.025862466666666663,
+        "max": 0.025959966666666667,
+        "iqr": 3.93666666666688e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 81125.0625,
+    "sum_abs": 33565976.0625,
+    "cancellation_condition": 413.7559347026697
+  },
+  {
+    "n": 1048576,
+    "dataset": "positive",
+    "path": "cub_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.005768533330410719,
+        "min": 0.005762133281677961,
+        "max": 0.005791999865323305,
+        "iqr": 0.0
+      },
+      "host_ms": {
+        "median": 0.005957100000000001,
+        "min": 0.005938066666666667,
+        "max": 0.005972099999999999,
+        "iqr": 1.0666666666666637e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 1507328.0,
+    "sum_abs": 1507328.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "positive",
+    "path": "tree_fp32",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.009483734145760536,
+        "min": 0.009454933926463127,
+        "max": 0.00951253343373537,
+        "iqr": 2.5600194931030273e-05
+      },
+      "host_ms": {
+        "median": 0.009673433333333334,
+        "min": 0.0096544,
+        "max": 0.009703133333333334,
+        "iqr": 2.836666666666647e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 1507328.0,
+    "sum_abs": 1507328.0,
+    "cancellation_condition": 1.0
+  },
+  {
+    "n": 1048576,
+    "dataset": "positive",
+    "path": "tree_fp64",
+    "samples": 9,
+    "timings": {
+      "device_ms": {
+        "median": 0.025627734139561653,
+        "min": 0.025599999353289604,
+        "max": 0.02563413418829441,
+        "iqr": 3.306753933429718e-05
+      },
+      "host_ms": {
+        "median": 0.025809433333333336,
+        "min": 0.025800733333333332,
+        "max": 0.025839800000000003,
+        "iqr": 1.8366666666665143e-05
+      }
+    },
+    "max_abs_error": 0.0,
+    "max_error_over_sum_abs": 0.0,
+    "reference_sum": 1507328.0,
+    "sum_abs": 1507328.0,
+    "cancellation_condition": 1.0
+  }
+]
