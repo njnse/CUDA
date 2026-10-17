@@ -10,8 +10,11 @@ GPU execution and publication completed successfully. The tested source is ident
 - racecheck: 0 errors, 0 warnings.
 - Benchmark: 225 raw samples, 15 per length and implementation, rotating path order.
 - Capture, instantiate and upload durations recorded separately for each length.
-- Nsight profiling: not executed.
+- Supplementary Nsight Systems node-level profiling and CSV export: exit 0; excluded from performance timing.
+- Two additional uninstrumented runs: all correctness checks passed; 675 total unprofiled samples across three runs.
 
 An initial attempt failed exact comparison at the largest input. Its input/poison copies used the default stream while kernels used a nonblocking stream. The fix queues H2D copies on the execution stream and synchronizes initial input before capture. The same large-input check and all sanitizers pass after the fix. Tolerance was not widened.
 
 Public evidence omits connection identifiers, absolute personal paths and machine/account names. Measurements, source hashes, GPU/driver/toolkit information and pass/fail output are preserved. Performance scope and limitations are described in the README; results apply to this workload and device.
+
+See [repeated-execution report](reproduction-report.md) for the additional allocation, variance and trace evidence.

@@ -9,7 +9,7 @@ Acceptance criteria:
 4. Setup is excluded from steady-state replay and included explicitly in the amortization calculation.
 5. The single-kernel fused path is a required comparator; an eager-only speedup is insufficient evidence for recommending graphs.
 
-Observations: all five lengths and three implementations passed full-array correctness and all four sanitizer tools. Graph replay improved measured eager wall time by about 1.06x to 1.36x. Fusion was fastest at every tested length. See the README table and raw samples.
+Observations: all five lengths and three implementations passed full-array correctness and all four sanitizer tools. Graph replay improved measured eager wall time by about 1.06x to 1.41x across three process runs in two allocations. Fusion was fastest at every tested length. See the README table and raw samples.
 
 Interpretation: the measurements support reduced submission overhead for graph replay and lower overall cost for fusion in this specific pointwise pipeline. Cross-device behavior, workload changes, concurrent replay and application-wide impact remain untested.
 

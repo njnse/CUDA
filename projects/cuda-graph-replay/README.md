@@ -54,4 +54,8 @@ Graph replay reduced measured eager wall time at every tested length, but fusion
 
 Break-even is an illustration from one observed setup duration per length and the difference of measured median wall times. It is not a confidence interval or a guaranteed application crossover. First-shape setup includes one-time effects, and fixed-address replay benefits from a stable workload.
 
-Compilation, the independent CPU test and three Python tests passed. Five input lengths times three implementations passed exact full-array comparison, output/temporary guards and input-immutability checks. memcheck, initcheck and synccheck reported zero errors; racecheck reported zero errors and warnings. No Nsight trace was collected for this revision; the event and host timing logs are the performance evidence.
+Compilation, the independent CPU test and three Python tests passed. Five input lengths times three implementations passed exact full-array comparison, output/temporary guards and input-immutability checks. memcheck, initcheck and synccheck reported zero errors; racecheck reported zero errors and warnings. An additional Nsight Systems node-level trace was collected separately; its timings are excluded from performance comparisons. See the repeated-execution report.
+
+## Repeated execution and profiling
+
+Two additional uninstrumented runs reproduced the result. Across all three runs, graph replay was 1.06x-1.41x faster than eager execution, while fusion remained fastest. [Detailed execution report](results/reproduction-report.md) records run-level variation, setup amortization, source identity, trace counts and reproduction commands.
