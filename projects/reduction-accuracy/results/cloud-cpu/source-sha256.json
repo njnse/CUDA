@@ -1,0 +1,10 @@
+{
+  "src/reduction.cu": "cf89271d159afdf00b093e5b638e12e583df26eb63cfa590678a8db75abef13e",
+  "include/reference.hpp": "0f3033048c4bc849fc2d9a82fbbc3ab7564ce625d62dacc938460610714851fa",
+  "scripts/analyze.py": "d7af3d5961a6f9bb1a1cc7b4cf8ab8698ce954b37ca7f4fa9c8c26ef61eeca15",
+  "scripts/run.sh": "22131fee07b080cae9fe1f8e39b80f5b8685cce55d7bfa82f44311eea4f57969",
+  "scripts/run_worker.py": "6895375cac7f64e740d239d3ad583d4b19c7ae635a185d03e89ad79e48241c1b",
+  "scripts/test_cpu.sh": "7459b2b750885d7ab6fa704af59d8ce2cec42d933492bfa1d2141af6d6ead832",
+  "tests/reference_test.cpp": "9439cc601c54cf35cd4fd40e8626a59f79b255c6d9d404d8dbb4f6a1322da85c",
+  "tests/test_analysis.py": "d9cd84f80159702e7baacf48d4c46308fab763144c32f1de951cd3abcf06058c"
+}

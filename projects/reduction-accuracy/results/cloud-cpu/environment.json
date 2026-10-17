@@ -1,0 +1,18 @@
+{
+  "host_compiler": "GNU C++ 14.2.0",
+  "python": "3.12.14",
+  "cpu_flags": [
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "cpu_oracle_checks": 29,
+  "python_analysis_tests": 5,
+  "cuda_compilation": "pending; nvcc unavailable",
+  "gpu_correctness": "pending; GPU unavailable",
+  "benchmark": "pending",
+  "sanitizers": "pending",
+  "profiling": "pending"
+}

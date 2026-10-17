@@ -1,0 +1,11 @@
+PASS long-double oracle vs exact integer units, cancellation, tails, finite-input contract: 29 checks
+test_corrupt_evidence (test_analysis.AnalysisTests.test_corrupt_evidence) ... ok
+test_fp32_cancellation_error_is_reported (test_analysis.AnalysisTests.test_fp32_cancellation_error_is_reported) ... ok
+test_schema (test_analysis.AnalysisTests.test_schema) ... ok
+test_valid_and_dispersion (test_analysis.AnalysisTests.test_valid_and_dispersion) ... ok
+test_zero_reference (test_analysis.AnalysisTests.test_zero_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.012s
+
+OK
