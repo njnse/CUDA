@@ -1,0 +1,4 @@
+Generating SQLite file [private-path] from [private-path]
+Processing [[private-path] with [/apps/compilers/cuda/12.4.1/nsight-systems-2023.4.4/host-linux-x64/reports/cuda_api_sum.py] to [[private-path] PROCESSED
+
+Processing [[private-path] with [/apps/compilers/cuda/12.4.1/nsight-systems-2023.4.4/host-linux-x64/reports/cuda_gpu_kern_sum.py] to [[private-path] PROCESSED

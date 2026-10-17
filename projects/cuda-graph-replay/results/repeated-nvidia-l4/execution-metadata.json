@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:00:07",
+  "allocated_resources": "billing=2,cpu=2,gres/gpu:l4=1,gres/gpu=1,mem=8G,node=1",
+  "unprofiled_additional_process_runs": 2,
+  "performance_samples_per_run": 225,
+  "profiled_run_excluded_from_performance_summary": true,
+  "publication": "Sanitized text and CSV exports; full binary trace remains in private execution storage."
+}

@@ -1,0 +1,11 @@
+GPU=NVIDIA L4 cc=8.9 runtime=12040 driver_api=13020
+SETUP n=1 capture_us=156.078 instantiate_us=45.529 upload_us=26.019 total_us=227.626 nodes=2
+PASS n=1 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=31 capture_us=10.225 instantiate_us=18.048 upload_us=9.434 total_us=37.707 nodes=2
+PASS n=31 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=257 capture_us=10.566 instantiate_us=13.12 upload_us=8.523 total_us=32.209 nodes=2
+PASS n=257 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=4096 capture_us=11.077 instantiate_us=18.468 upload_us=9.044 total_us=38.589 nodes=2
+PASS n=4096 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=1048576 capture_us=23.195 instantiate_us=30.687 upload_us=11.638 total_us=65.52 nodes=2
+PASS n=1048576 modes=3 exact_reference=pass guards=pass input_immutable=pass

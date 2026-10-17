@@ -1,0 +1,4 @@
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+40.7,32173905,25110,1281.3,1088.0,1055,6432,980.7,"affine(const float *, float *, int)"
+38.8,30670901,25110,1221.5,1056.0,927,6528,989.0,"relu(const float *, float *, int)"
+20.4,16124802,12555,1284.3,1088.0,1055,6463,985.2,"fused(const float *, float *, int)"
