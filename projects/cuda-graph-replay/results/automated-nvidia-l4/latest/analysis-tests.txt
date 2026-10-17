@@ -1,0 +1,8 @@
+test_empty (test_analysis.AnalysisTests) ... ok
+test_invalid (test_analysis.AnalysisTests) ... ok
+test_median (test_analysis.AnalysisTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

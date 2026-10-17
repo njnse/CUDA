@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tested_source_commit": "34d7af6561ab2314c936f65cc60c15fe3efa01e2",
+  "code_digest": "d33e85afe37220ec4c803b25809ec2c61ef08c6378153857ed34ef82b16e5310",
+  "gpu": "NVIDIA L4, 580.178.04, 23034 MiB",
+  "cuda_compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2024 NVIDIA Corporation\nBuilt on Thu_Mar_28_02:18:24_PDT_2024\nCuda compilation tools, release 12.4, V12.4.131\nBuild cuda_12.4.r12.4/compiler.34097967_0",
+  "utc": "2026-10-17T20:58:17.206938+00:00",
+  "publication": "Sanitized copies; operational identifiers and paths omitted."
+}

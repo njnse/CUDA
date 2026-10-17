@@ -1,0 +1,13 @@
+========= COMPUTE-SANITIZER
+GPU=NVIDIA L4 cc=8.9 runtime=12040 driver_api=13020
+SETUP n=1 capture_us=368.771 instantiate_us=51.769 upload_us=27.312 total_us=447.852 nodes=2
+PASS n=1 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=31 capture_us=10.617 instantiate_us=22.514 upload_us=15.153 total_us=48.284 nodes=2
+PASS n=31 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=257 capture_us=6.14 instantiate_us=12.919 upload_us=11.448 total_us=30.507 nodes=2
+PASS n=257 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=4096 capture_us=5.558 instantiate_us=10.516 upload_us=10.436 total_us=26.51 nodes=2
+PASS n=4096 modes=3 exact_reference=pass guards=pass input_immutable=pass
+SETUP n=1048576 capture_us=6.399 instantiate_us=13.301 upload_us=13.25 total_us=32.95 nodes=2
+PASS n=1048576 modes=3 exact_reference=pass guards=pass input_immutable=pass
+========= RACECHECK SUMMARY: 0 hazards displayed (0 errors, 0 warnings)
