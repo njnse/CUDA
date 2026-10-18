@@ -1,0 +1,11 @@
+# Measure throughput, then explain it
+
+The authoritative latency samples are uninstrumented synchronized host wall measurements. Keep the timing protocol fixed: seed 2027, three warmups, three full-array repetitions/sample, nine rotating samples, identical input and chunk sizes. Each repetition includes H2D, kernel, D2H and final stream synchronization. Do not compare these against kernel-only CUDA-event measurements.
+
+When available, the worker runs memcheck, initcheck, racecheck and synccheck with nonzero error exit codes over `--quick`: lengths 1, 257 and 4,097 with chunk capacity 256 and all three paths, each repeated twice. The 4,097 case repeatedly reuses both slots and has a one-element tail. Unavailable tools are recorded. Memory/synchronization errors fail the run; guards alone do not establish safety.
+
+When available, the worker requests one `affine` launch through Nsight Compute using `gpu__time_duration.sum` in a separate `--profile` process. This focused counter attempt establishes profiling readiness only. Its times are excluded from `raw.csv`. A denied/unsupported/timed-out profiler is explicitly recorded; exit zero alone should be checked against actual counter output before claiming capture. It does not establish transfer overlap.
+
+To establish overlap, collect an Nsight Systems CUDA timeline of `transfer_lab --profile` from the project's build directory, keeping any binary report in private build/result storage. Inspect copy directions, stream identities, kernel intervals and final synchronization for pinned serial versus pinned pipeline. Overlap is a timeline observation, not a capability flag. Publish only sanitized text summaries that omit machine/account identities and absolute operational paths; retain workload sizes, versions, command options and source hashes.
+
+Repeat the entire uninstrumented worker run in a fresh output directory after profiling. Report per-run medians and IQR, including adverse or neutral comparisons. Copy-engine count and concurrent-kernel capability are recorded by `--diagnose`, but neither guarantees concurrency for the tested transfer sizes. Logical 8*n bytes per repetition is payload accounting, not a hardware traffic counter.

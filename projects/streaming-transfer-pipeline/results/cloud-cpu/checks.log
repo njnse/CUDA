@@ -1,0 +1,9 @@
+PASS shell syntax: scripts/run.sh
+PASS shell syntax: scripts/test_cpu.sh
+PASS Python source compilation: scripts/analyze.py
+PASS Python source compilation: scripts/run_worker.py
+PASS Python source compilation: tests/test_analysis.py
+PASS Python source compilation: tests/test_runner.py
+PASS actual missing-CUDA runner: nonzero exit, CPU passed, GPU pending, environment retained
+PASS existing results rejected; every existing artifact preserved
+PASS missing/relative/project/source-tree output paths rejected

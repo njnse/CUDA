@@ -4,7 +4,8 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
-| [Reduction accuracy lab](projects/reduction-accuracy/) | What accuracy and execution cost follow from FP32 versus FP64 accumulation? | Independent exact-unit oracle, CUB baseline, reproducible worker; GPU validation pending |
+| [Streaming transfer pipeline](projects/streaming-transfer-pipeline/) | When do pinned buffers and two streams improve complete H2D/kernel/D2H throughput? | Exact oracle, matched serial baselines, worker runner; GPU validation pending |
+| [Reduction accuracy lab](projects/reduction-accuracy/) | What accuracy and execution cost follow from FP32 versus FP64 accumulation? | Worker-reported GPU pass, raw CSV and source hashes; detailed tool logs not archived |
 | [CUDA Graph replay](projects/cuda-graph-replay/) | When does graph replay amortize setup, and when is fusion better? | Three implementations, exact oracle, rotated-order timing and reproducible GPU checks |
 | [Transpose memory lab](projects/transpose-memory-lab/) | How do coalescing and shared-memory padding affect rectangular transpose? | Runnable tutorial, independent oracle, timing protocol, diagnostics and product acceptance criteria |
 
@@ -18,6 +19,6 @@ Each project separates source/build validation from actual GPU correctness and p
 - GPU execution belongs on a Slurm compute allocation, not a login node.
 - Publish only observed measurements with device, toolkit, input, timing scope and source provenance.
 
-Next candidates: streaming transfers, CUDA Graph break-even, runtime/driver diagnostics, reduction accuracy, compiler regression minimization. Avoid repeating a topic without a new engineering question.
+Next candidates: runtime/driver diagnostics, compiler regression minimization, asynchronous allocation lifetime, launch-configuration limits. Avoid repeating a topic without a new engineering question.
 
 The [CPU CI example](docs/cpu-ci-example.yml) is documentation, not an active workflow. CPU and GPU checks were executed directly; no GitHub Actions success is claimed.

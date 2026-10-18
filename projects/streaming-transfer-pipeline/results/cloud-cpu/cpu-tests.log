@@ -1,0 +1,13 @@
+PASS oracle known answers, wraparound, complete chunk coverage, tails, slot reuse, invalid contracts: 44 checks
+test_bad_evidence (test_analysis.AnalysisTests.test_bad_evidence) ... ok
+test_matched (test_analysis.AnalysisTests.test_matched) ... ok
+test_no_pipeline_gain (test_analysis.AnalysisTests.test_no_pipeline_gain) ... ok
+test_schema (test_analysis.AnalysisTests.test_schema) ... ok
+test_invalid_output (test_runner.RunnerConfigurationTests.test_invalid_output) ... ok
+test_manifest_scope (test_runner.RunnerConfigurationTests.test_manifest_scope) ... ok
+test_preserve_existing_artifact (test_runner.RunnerConfigurationTests.test_preserve_existing_artifact) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+
+OK
