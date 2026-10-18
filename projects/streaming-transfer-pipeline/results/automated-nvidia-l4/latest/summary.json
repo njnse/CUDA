@@ -1,0 +1,212 @@
+[
+  {
+    "n": 65537,
+    "chunk": 4096,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 0.252283333333,
+        "min_ms": 0.221740333333,
+        "max_ms": 0.279167333333,
+        "iqr_ms": 0.021168999999999993,
+        "logical_GBps_from_median": 2.078203078551996
+      },
+      "pinned_serial": {
+        "median_ms": 0.232149333333,
+        "min_ms": 0.194659333333,
+        "max_ms": 0.26102,
+        "iqr_ms": 0.010589333334,
+        "logical_GBps_from_median": 2.2584428413926934
+      },
+      "pinned_pipeline": {
+        "median_ms": 0.0978453333333,
+        "min_ms": 0.0974646666667,
+        "max_ms": 0.101047,
+        "iqr_ms": 0.00047733333329999517,
+        "logical_GBps_from_median": 5.358416003490324
+      }
+    },
+    "pinned_serial_over_pipeline": 2.3726152839830115,
+    "paired_pipeline_saving_ms": {
+      "min": 0.0971946666663,
+      "median": 0.131793666666,
+      "max": 0.16281766666669997
+    },
+    "all_pairs_favor_pipeline": true
+  },
+  {
+    "n": 65537,
+    "chunk": 65536,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 0.0613033333333,
+        "min_ms": 0.0587893333333,
+        "max_ms": 0.065216,
+        "iqr_ms": 0.0027106666667000012,
+        "logical_GBps_from_median": 8.552487629823585
+      },
+      "pinned_serial": {
+        "median_ms": 0.0466843333333,
+        "min_ms": 0.0449116666667,
+        "max_ms": 0.0503566666667,
+        "iqr_ms": 0.0013856666667000014,
+        "logical_GBps_from_median": 11.230662677708604
+      },
+      "pinned_pipeline": {
+        "median_ms": 0.037113,
+        "min_ms": 0.036916,
+        "max_ms": 0.0372666666667,
+        "iqr_ms": 0.00016666666660000024,
+        "logical_GBps_from_median": 14.12701748713389
+      }
+    },
+    "pinned_serial_over_pipeline": 1.2578970531431035,
+    "paired_pipeline_saving_ms": {
+      "min": 0.007644999999999999,
+      "median": 0.009614666666700002,
+      "max": 0.013327000000000006
+    },
+    "all_pairs_favor_pipeline": true
+  },
+  {
+    "n": 1048579,
+    "chunk": 4096,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 4.17439,
+        "min_ms": 3.92176933333,
+        "max_ms": 4.42563833333,
+        "iqr_ms": 0.07102466666999963,
+        "logical_GBps_from_median": 2.0095467840810275
+      },
+      "pinned_serial": {
+        "median_ms": 3.76610266667,
+        "min_ms": 3.20750733333,
+        "max_ms": 3.95339433333,
+        "iqr_ms": 0.4267986666699999,
+        "logical_GBps_from_median": 2.227403961723979
+      },
+      "pinned_pipeline": {
+        "median_ms": 1.35448833333,
+        "min_ms": 1.34165866667,
+        "max_ms": 1.36717766667,
+        "iqr_ms": 0.008583000000000007,
+        "logical_GBps_from_median": 6.193210966517967
+      }
+    },
+    "pinned_serial_over_pipeline": 2.7804615026923587,
+    "paired_pipeline_saving_ms": {
+      "min": 1.86584866666,
+      "median": 2.41161433334,
+      "max": 2.593698
+    },
+    "all_pairs_favor_pipeline": true
+  },
+  {
+    "n": 1048579,
+    "chunk": 65536,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 0.852765666667,
+        "min_ms": 0.842517,
+        "max_ms": 0.869477666667,
+        "iqr_ms": 0.008539666666000034,
+        "logical_GBps_from_median": 9.83697201692773
+      },
+      "pinned_serial": {
+        "median_ms": 0.558468666667,
+        "min_ms": 0.536121333333,
+        "max_ms": 0.598746333333,
+        "iqr_ms": 0.014127999999999918,
+        "logical_GBps_from_median": 15.020774665952597
+      },
+      "pinned_pipeline": {
+        "median_ms": 0.324019,
+        "min_ms": 0.311697,
+        "max_ms": 0.327614666667,
+        "iqr_ms": 0.005104333332999977,
+        "logical_GBps_from_median": 25.8893213052321
+      }
+    },
+    "pinned_serial_over_pipeline": 1.7235676508692392,
+    "paired_pipeline_saving_ms": {
+      "min": 0.21171166666600005,
+      "median": 0.23460966666699995,
+      "max": 0.27113166666599997
+    },
+    "all_pairs_favor_pipeline": true
+  },
+  {
+    "n": 4194307,
+    "chunk": 4096,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 17.3564006667,
+        "min_ms": 16.7180406667,
+        "max_ms": 17.722143,
+        "iqr_ms": 0.5074513333999988,
+        "logical_GBps_from_median": 1.9332612011185935
+      },
+      "pinned_serial": {
+        "median_ms": 14.213692,
+        "min_ms": 13.1660363333,
+        "max_ms": 15.2864253333,
+        "iqr_ms": 1.1126069999999988,
+        "logical_GBps_from_median": 2.3607135992534523
+      },
+      "pinned_pipeline": {
+        "median_ms": 5.550708,
+        "min_ms": 5.456418,
+        "max_ms": 5.57542233333,
+        "iqr_ms": 0.06885466667000006,
+        "logical_GBps_from_median": 6.045076772188341
+      }
+    },
+    "pinned_serial_over_pipeline": 2.5606989234526476,
+    "paired_pipeline_saving_ms": {
+      "min": 7.5906139999699995,
+      "median": 8.716048,
+      "max": 9.8075533333
+    },
+    "all_pairs_favor_pipeline": true
+  },
+  {
+    "n": 4194307,
+    "chunk": 65536,
+    "samples": 9,
+    "timings": {
+      "pageable_serial": {
+        "median_ms": 3.468654,
+        "min_ms": 3.438919,
+        "max_ms": 3.49072766667,
+        "iqr_ms": 0.03283299999999967,
+        "logical_GBps_from_median": 9.67362440877643
+      },
+      "pinned_serial": {
+        "median_ms": 2.28818366667,
+        "min_ms": 2.171483,
+        "max_ms": 2.370345,
+        "iqr_ms": 0.07235000000000014,
+        "logical_GBps_from_median": 14.664231935905692
+      },
+      "pinned_pipeline": {
+        "median_ms": 1.20681033333,
+        "min_ms": 1.189197,
+        "max_ms": 1.23727,
+        "iqr_ms": 0.025225000000000053,
+        "logical_GBps_from_median": 27.804249825581
+      }
+    },
+    "pinned_serial_over_pipeline": 1.8960590603795409,
+    "paired_pipeline_saving_ms": {
+      "min": 0.9533853333299998,
+      "median": 1.06584933333,
+      "max": 1.17915833333
+    },
+    "all_pairs_favor_pipeline": true
+  }
+]
