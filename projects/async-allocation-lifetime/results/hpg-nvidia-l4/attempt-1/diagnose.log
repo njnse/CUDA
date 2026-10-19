@@ -1,0 +1,1 @@
+gpu=NVIDIA L4 cc=8.9 runtime=12040 driver_api=13020 memory_pools_supported=1 seed=2027 block=256

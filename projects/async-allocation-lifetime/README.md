@@ -10,7 +10,7 @@ The experiment implements three complete, synchronous-at-the-boundary lifetimes:
 | `async_release` | `cudaMallocFromPoolAsync`, kernel, `cudaFreeAsync`, stream synchronize | 0 |
 | `async_retain` | Same stream-ordered APIs | UINT64_MAX |
 
-The legacy path is the standard synchronous allocation baseline. The two async paths differ only in pool retention policy. Stream-ordered allocation is exercised through an explicitly owned pool, rather than changing the device's default pool or a global setting. Pool creation and CUDA context startup are outside measured lifetimes. No gain is claimed before worker measurements exist.
+The legacy path is the standard synchronous allocation baseline. The two async paths differ only in pool retention policy. Stream-ordered allocation is exercised through an explicitly owned pool, rather than changing the device's default pool or a global setting. Pool creation and CUDA context startup are outside measured lifetimes. Two HPG L4 runs measured the latency/memory tradeoff below.
 
 ## Reproduce
 
@@ -25,7 +25,7 @@ RESULTS_DIR=/path/to/fresh/results CUDA_ARCH=sm_89 \
 
 Use a fresh absolute `RESULTS_DIR`. The runner builds under the project's `build/`, writes evidence under `RESULTS_DIR`, rejects existing artifact names and never removes previous results. It performs no remote login, scheduling, credential reading or global configuration changes. The worker prepares `CUDA_MODULE`; the script does not change modules.
 
-Target: CUDA Toolkit 12.4.1 (`nvcc` 12.4.131), GNU C++ 11.5, C++17, one NVIDIA L4, two CPU cores and 8 GiB host memory. Default flags are `-std=c++17 -O3 -lineinfo -arch=sm_89 -Iinclude -Xcompiler=-Wall,-Wextra`; `CXX` and `CUDA_ARCH` may select other explicit test configurations. Python helpers use the standard library. The executable requires `cudaDevAttrMemoryPoolsSupported`; absence fails with a clear diagnostic rather than silently substituting a baseline. Target compilation is pending.
+Target: CUDA Toolkit 12.4.1 (`nvcc` 12.4.131), GNU C++ 11.5, C++17, one NVIDIA L4, two CPU cores and 8 GiB host memory. Default flags are `-std=c++17 -O3 -lineinfo -arch=sm_89 -Iinclude -Xcompiler=-Wall,-Wextra`; `CXX` and `CUDA_ARCH` may select other explicit test configurations. Python helpers use the standard library. The executable requires `cudaDevAttrMemoryPoolsSupported`; absence fails with a clear diagnostic rather than silently substituting a baseline. Target compilation and execution passed on HPG.
 
 ## Correctness and allocation lifetime
 
@@ -49,11 +49,27 @@ Each path receives an untimed correctness/context warmup and three full lifetime
 
 ## Worker execution and evidence
 
-The worker runs CPU checks → CUDA compilation → invalid-mode rejection → GPU correctness → benchmark/analysis → available Compute Sanitizer modes → available focused profiling. Core failures and available sanitizer errors return nonzero. Missing tools and denied/unsupported profiling are explicitly unavailable, never passing. Subprocess limits fit a 25-minute allocation; actual target elapsed time is not yet measured.
+The worker runs CPU checks → CUDA compilation → invalid-mode rejection → GPU correctness → benchmark/analysis → available Compute Sanitizer modes → available focused profiling. Core failures and available sanitizer errors return nonzero. Missing tools and denied/unsupported profiling are explicitly unavailable, never passing. Subprocess limits fit a 25-minute allocation; the two HPG worker runs completed in 6.411 and 5.617 seconds (excluding allocation queue time).
 
 Results contain source commit/hashes, environment/build flags, correctness and tool logs, raw CSV, summary and validation state. Known operational absolute paths and host identity in tool messages are replaced with neutral markers; numerical data and versions remain intact. No binary profiler report is published.
 
-[Validation record](results/validation.md) separates completed cloud checks from pending GPU execution. Only an actual `results/automated-nvidia-l4/latest/validation.json` and matching raw CSV/logs establish worker results for these sources. Previous projects' measurements are not evidence here.
+## Measured HPG L4 results
+
+Two independent GPU allocations executed `scripts/run.sh` against source commit `646ec50547f8291792de3f8f49082286764b083f`. Both passed CPU tests, 30 GPU cases repeated three times, 81 benchmark samples, all four Compute Sanitizer modes and focused Nsight Compute capture. CUDA 12.4.131, GCC 11.5.0, driver 580.178.04 and `sm_89` were used.
+
+Median complete-lifetime latency, in microseconds (run 1 / run 2):
+
+| Payload elements | Legacy | Async release | Async retain |
+|---|---:|---:|---:|
+| 256 | 85.409 / 84.663 | 720.137 / 718.927 | 8.465 / 8.238 |
+| 65,537 | 84.922 / 83.863 | 719.438 / 718.474 | 8.527 / 8.313 |
+| 1,048,576 | 171.381 / 170.280 | 722.460 / 721.247 | 11.412 / 11.122 |
+
+Retention reduced median latency by 9.96–15.31× versus legacy and 63.31–87.27× versus threshold zero across these runs and shapes. This required 33,554,432 reserved pool bytes (32 MiB), even for the 1,280-byte allocation. Threshold zero reported zero reserved bytes; both async paths reported zero live bytes after completion. Threshold-zero async lifetimes were slower than legacy here: API choice alone does not guarantee lower latency.
+
+These are host-wall steady-state measurements with one outstanding allocation, excluding pool/context setup. Two allocations on one GPU model do not establish behavior under contention or on other devices. The focused kernel capture is separate from lifetime timing.
+
+[Validation record](results/validation.md) documents the protocol and limitations. Actual logs, CSV, environment and source hashes are in [run 1](results/hpg-nvidia-l4/attempt-1/) and [run 2](results/hpg-nvidia-l4/attempt-2/). Previous projects' measurements are not evidence here.
 
 Read the [tutorial](docs/tutorial.md), [engineering/product analysis](docs/engineering-analysis.md) and [profiling protocol](docs/profiling.md).
 

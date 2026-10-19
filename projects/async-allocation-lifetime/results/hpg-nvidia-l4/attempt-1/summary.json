@@ -1,0 +1,116 @@
+[
+  {
+    "n": 256,
+    "allocated_bytes": 1280,
+    "samples": 9,
+    "timings": {
+      "legacy": {
+        "median_ms": 0.0854085,
+        "min_ms": 0.08455825,
+        "max_ms": 0.086713,
+        "iqr_ms": 0.0004636500000000099,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_release": {
+        "median_ms": 0.72013735,
+        "min_ms": 0.719246,
+        "max_ms": 0.7208339,
+        "iqr_ms": 0.0006875499999999812,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_retain": {
+        "median_ms": 0.00846535,
+        "min_ms": 0.0082145,
+        "max_ms": 0.0086792,
+        "iqr_ms": 0.00019380000000000092,
+        "reserved_bytes_min": 33554432,
+        "reserved_bytes_max": 33554432
+      }
+    },
+    "legacy_over_retained": 10.089187097993586,
+    "release_over_retained": 85.06882172621333,
+    "paired_retention_saving_ms": {
+      "min": 0.71087725,
+      "median": 0.71145815,
+      "max": 0.7126194
+    }
+  },
+  {
+    "n": 65537,
+    "allocated_bytes": 262404,
+    "samples": 9,
+    "timings": {
+      "legacy": {
+        "median_ms": 0.08492175,
+        "min_ms": 0.0838652,
+        "max_ms": 0.0856794,
+        "iqr_ms": 0.0006595000000000073,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_release": {
+        "median_ms": 0.7194378,
+        "min_ms": 0.7189901,
+        "max_ms": 0.7200597,
+        "iqr_ms": 0.0003234999999999211,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_retain": {
+        "median_ms": 0.008527,
+        "min_ms": 0.00839175,
+        "max_ms": 0.00868725,
+        "iqr_ms": 0.00018229999999999982,
+        "reserved_bytes_min": 33554432,
+        "reserved_bytes_max": 33554432
+      }
+    },
+    "legacy_over_retained": 9.95915914155037,
+    "release_over_retained": 84.37173683593292,
+    "paired_retention_saving_ms": {
+      "min": 0.7103028499999999,
+      "median": 0.71094035,
+      "max": 0.7114551
+    }
+  },
+  {
+    "n": 1048576,
+    "allocated_bytes": 4194560,
+    "samples": 9,
+    "timings": {
+      "legacy": {
+        "median_ms": 0.1713809,
+        "min_ms": 0.17105395,
+        "max_ms": 0.1720815,
+        "iqr_ms": 0.00026734999999999953,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_release": {
+        "median_ms": 0.7224604,
+        "min_ms": 0.72210485,
+        "max_ms": 0.72302525,
+        "iqr_ms": 0.0006144500000000441,
+        "reserved_bytes_min": 0,
+        "reserved_bytes_max": 0
+      },
+      "async_retain": {
+        "median_ms": 0.0114119,
+        "min_ms": 0.0111009,
+        "max_ms": 0.01153655,
+        "iqr_ms": 0.00016379999999999867,
+        "reserved_bytes_min": 33554432,
+        "reserved_bytes_max": 33554432
+      }
+    },
+    "legacy_over_retained": 15.017735872203575,
+    "release_over_retained": 63.307635012574586,
+    "paired_retention_saving_ms": {
+      "min": 0.710712,
+      "median": 0.711036,
+      "max": 0.7116133499999999
+    }
+  }
+]

@@ -1,0 +1,12 @@
+test_adverse_result (test_analysis.AnalysisTests) ... ok
+test_complete_and_memory_cost (test_analysis.AnalysisTests) ... ok
+test_corrupt_evidence (test_analysis.AnalysisTests) ... ok
+test_schema (test_analysis.AnalysisTests) ... ok
+test_invalid_output (test_runner.RunnerConfigurationTests) ... ok
+test_manifest_scope (test_runner.RunnerConfigurationTests) ... ok
+test_preserve_existing_artifact (test_runner.RunnerConfigurationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.017s
+
+OK

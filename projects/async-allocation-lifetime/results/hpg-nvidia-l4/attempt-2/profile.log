@@ -1,0 +1,12 @@
+==PROF== Connected to process <pid> (<project>/build/run-dn64z76d/pool_lab)
+==PROF== Profiling "fill_pattern": 0%....50%....100% - 1 pass
+==PROF== Disconnected from process <pid>
+[<pid>] pool_lab@127.0.0.1
+  fill_pattern(unsigned int *, unsigned long) (257, 1, 1)x(256, 1, 1), Context 1, Stream 14, Device 0, CC 8.9
+    Section: Command line profiler metrics
+    ---------------------- ----------- ------------
+    Metric Name            Metric Unit Metric Value
+    ---------------------- ----------- ------------
+    gpu__time_duration.sum          us         2.05
+    ---------------------- ----------- ------------
+
