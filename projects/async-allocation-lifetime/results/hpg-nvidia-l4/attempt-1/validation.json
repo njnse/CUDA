@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "gpu_correctness": "passed",
+  "benchmark": "passed",
+  "sanitizers": {
+    "memcheck": "passed",
+    "initcheck": "passed",
+    "racecheck": "passed",
+    "synccheck": "passed"
+  },
+  "profiling": "completed_attempt",
+  "seed": 2027,
+  "cpu_tests": "passed",
+  "profiler_exit_code": 0,
+  "elapsed_seconds": 6.411
+}

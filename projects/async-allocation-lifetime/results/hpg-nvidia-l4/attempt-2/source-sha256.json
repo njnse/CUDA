@@ -1,0 +1,11 @@
+{
+  "src/pool.cu": "64e085be33b8360d03fef035f0c1820fb30c38a216bd8111b56412384add3181",
+  "include/reference.hpp": "e4a75d1ec2e8e5c7edec7a09c757612a7dc42e2645e71810919a276ec3683b4e",
+  "tests/reference_test.cpp": "29e1b28a7e5afc7aedc84e6b69daa9d33e64efcbcf5cff0f2e97edd38232fdc0",
+  "tests/test_analysis.py": "e6c51577f396d3ea1fdf41bf7df6cb706392ccc1b5f95dbe76a85c4f7323064d",
+  "tests/test_runner.py": "dd16e97842f8abdc94a9e61e744e27e434aa795a6e3bfd0b04cb3d3b280f79b5",
+  "scripts/analyze.py": "9a3332d27d9084c7bbfa28ce8410b0b908a5254b6ca874d2dc982b28c48be1ae",
+  "scripts/run.sh": "22131fee07b080cae9fe1f8e39b80f5b8685cce55d7bfa82f44311eea4f57969",
+  "scripts/run_worker.py": "0d3731725791d0349fa89ba0ca644bc62e75453bb20ab254993f06617eda747e",
+  "scripts/test_cpu.sh": "7459b2b750885d7ab6fa704af59d8ce2cec42d933492bfa1d2141af6d6ead832"
+}

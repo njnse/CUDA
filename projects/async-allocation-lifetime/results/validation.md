@@ -8,8 +8,14 @@ Shell syntax and Python source compilation passed. An actual `run.sh` invocation
 
 Logs, cloud environment and source SHA-256 manifest are in `cloud-cpu/`. Probe outputs remain in ignored local results storage. Synthetic parser fixtures are not benchmark results. CPU checks do not establish CUDA event ordering or target compiler compatibility.
 
-## Pending GPU work
+## Executed HPG GPU validation
 
-No CUDA compiler or GPU is available in this cloud. Compilation with CUDA 12.4.131 and GNU C++ 11.5, 30 GPU correctness cases repeated three times, 81 benchmark samples, Compute Sanitizer and profiling are pending. No timings, speedups, counter values or allocator memory measurements have been generated for this project.
+Two independent HPG allocations ran the unmodified latest-main source `646ec50547f8291792de3f8f49082286764b083f` through `scripts/run.sh`. No application failure or source correction was required. Each requested one NVIDIA L4, two CPU cores, 8 GiB host RAM and a 25-minute limit on the HPG Turin partition. CUDA module 12.4.1 supplied nvcc 12.4.131; GCC 11.5.0, driver 580.178.04 and sm_89 were recorded. Worker elapsed times were 6.411 and 5.617 seconds, excluding scheduling. Source SHA-256 manifests in both runs match the committed executable sources, scripts and tests; documentation was updated afterward.
 
-An actual worker record at `automated-nvidia-l4/latest/validation.json`, matching source hashes, raw CSV and detailed correctness/tool logs is required to establish those outcomes. Missing tools remain unavailable, and an overall core pass does not imply that every optional tool executed. Previous projects' results are not reused as evidence.
+Each run passed CPU tests, CUDA compilation, invalid-mode rejection and 30 full GPU shape/path/handoff cases repeated three times. Exact payload, guards, event handoff and zero live pool bytes passed. Each generated 81 measured CSV rows. Memcheck, initcheck, racecheck and synccheck each passed the 10-case quick suite repeated three times with zero reported errors. Sanitizer coverage uses the quick shapes, not every benchmark shape. Nsight Compute exited zero and captured the fill kernel duration; this focused capture does not measure allocator cost.
+
+The [project README](../README.md#measured-hpg-l4-results) reports both runs' per-shape median latencies. Retain was 9.96–15.31× faster than legacy and 63.31–87.27× faster than release, while retaining 32 MiB for allocations from 1,280 to 4,194,560 bytes. Release reserved zero bytes and was slower than legacy. All async samples had zero used bytes. The reproducible tradeoff is reduced steady-state latency for retained memory; it is not a universal async API speedup. Pool/context setup, contention and multiple outstanding allocations remain outside this experiment.
+
+## Evidence and privacy
+
+[Run 1](hpg-nvidia-l4/attempt-1/) and [run 2](hpg-nvidia-l4/attempt-2/) contain actual raw CSV, summary JSON, environment/build flags, source commit and SHA-256 manifests, CPU/build/correctness/sanitizer logs, profiler output and validation state. The runner redacts project/result/home paths and hostname. Published profiler process IDs were additionally replaced with `<pid>`; numerical measurements were preserved. No scheduler identity/account/node listing, GPU UUID, credentials, binary reports or user home paths are included. Logs are explicitly tracked despite the repository's `*.log` ignore rule. No GPU-Computing files were modified.
