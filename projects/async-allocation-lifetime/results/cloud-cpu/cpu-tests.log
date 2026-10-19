@@ -1,0 +1,13 @@
+PASS wide-integer oracle vs incremental wraparound, known answers, tails, invalid sizes: 9 checks
+test_adverse_result (test_analysis.AnalysisTests.test_adverse_result) ... ok
+test_complete_and_memory_cost (test_analysis.AnalysisTests.test_complete_and_memory_cost) ... ok
+test_corrupt_evidence (test_analysis.AnalysisTests.test_corrupt_evidence) ... ok
+test_schema (test_analysis.AnalysisTests.test_schema) ... ok
+test_invalid_output (test_runner.RunnerConfigurationTests.test_invalid_output) ... ok
+test_manifest_scope (test_runner.RunnerConfigurationTests.test_manifest_scope) ... ok
+test_preserve_existing_artifact (test_runner.RunnerConfigurationTests.test_preserve_existing_artifact) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.005s
+
+OK

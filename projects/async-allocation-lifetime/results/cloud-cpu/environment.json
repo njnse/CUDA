@@ -1,0 +1,18 @@
+{
+  "host_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "python": "3.12.14",
+  "cpu_flags": [
+    "-std=c++17",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "cpu_oracle_checks": 9,
+  "python_tests": 7,
+  "cuda_compilation": "pending; nvcc unavailable",
+  "gpu_correctness": "pending; GPU unavailable",
+  "benchmark": "pending",
+  "sanitizers": "pending",
+  "profiling": "pending"
+}

@@ -16,3 +16,9 @@ CUDA compilation with Toolkit 12.4.131 and GNU C++ 11.5, 45 GPU correctness case
 Completion requires actual `results/automated-nvidia-l4/latest/validation.json`, matching source hashes, raw CSV and verification/tool logs for this project. No such worker record exists at publication time. Prior project measurements and synthetic analyzer fixtures are not reused as evidence.
 
 Unavailable or denied optional tools must remain explicitly unavailable. An overall core pass does not imply every profiler or sanitizer ran. Numerical timing comparisons and recommendations remain pending until matching evidence is uploaded.
+
+## Subsequent worker upload
+
+The later [worker record](automated-nvidia-l4/latest/validation.json) reports `passed` for source commit `f9288fc9058bbd47f3a59e61652241fa79f5c6ad`. Real raw CSV, summary, environment and source hashes are archived in the same directory. The upload supersedes the initial absence of worker output described above.
+
+Detailed build, GPU verification, sanitizer and profiler logs are not present in the published directory. An overall worker-reported pass does not independently substantiate each detailed tool outcome. Use the archived data as this project's timing evidence, and do not reuse it as validation for any later project. Overlap still requires a separate timeline observation.
