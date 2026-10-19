@@ -4,7 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
-| [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Legacy baseline, exact oracle, event handoff and worker runner; GPU validation pending |
+| [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Two NVIDIA L4 runs, exact oracle, event handoff, four sanitizers and 162 raw samples |
 | [Streaming transfer pipeline](projects/streaming-transfer-pipeline/) | When do pinned buffers and two streams improve complete H2D/kernel/D2H throughput? | Worker-reported GPU pass and raw CSV; detailed tool logs not archived |
 | [Reduction accuracy lab](projects/reduction-accuracy/) | What accuracy and execution cost follow from FP32 versus FP64 accumulation? | Worker-reported GPU pass, raw CSV and source hashes; detailed tool logs not archived |
 | [CUDA Graph replay](projects/cuda-graph-replay/) | When does graph replay amortize setup, and when is fusion better? | Three implementations, exact oracle, rotated-order timing and reproducible GPU checks |
