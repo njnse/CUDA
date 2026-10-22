@@ -1,0 +1,13 @@
+PASS oracle, wraparound, exact grid-stride coverage, grid cap, invalid shapes and launch limits: 47 checks
+test_corrupt_evidence (test_analysis.AnalysisTests.test_corrupt_evidence) ... ok
+test_heuristic_can_be_slower (test_analysis.AnalysisTests.test_heuristic_can_be_slower) ... ok
+test_matched_and_dispersion (test_analysis.AnalysisTests.test_matched_and_dispersion) ... ok
+test_schema (test_analysis.AnalysisTests.test_schema) ... ok
+test_invalid_output (test_runner.RunnerConfigurationTests.test_invalid_output) ... ok
+test_manifest_scope (test_runner.RunnerConfigurationTests.test_manifest_scope) ... ok
+test_preserve_existing_artifact (test_runner.RunnerConfigurationTests.test_preserve_existing_artifact) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.016s
+
+OK

@@ -1,0 +1,11 @@
+{
+  "src/geometry.cu": "c9faca34a8dfd034e8043b8a3831ea7906582c005e5295dbe91ab83b31dbf0c4",
+  "include/reference.hpp": "81cf1695de7852a6f56193a8944467b7f68511d300e49d2c8bcf015b27c80a2e",
+  "scripts/analyze.py": "6a3191078c0a0b02c423820cbe5a0e91862ae4e5dab5c633f94f00653fcd7150",
+  "scripts/run.sh": "22131fee07b080cae9fe1f8e39b80f5b8685cce55d7bfa82f44311eea4f57969",
+  "scripts/run_worker.py": "8625e572900ada6cf104d9b50afc11dffd96364353dc8794daca5c0891866edc",
+  "scripts/test_cpu.sh": "7459b2b750885d7ab6fa704af59d8ce2cec42d933492bfa1d2141af6d6ead832",
+  "tests/reference_test.cpp": "a33bc6574b9a99b3a25d40749133f0a18f05fb2dd87f1cd191dcfa908a3f1ae9",
+  "tests/test_analysis.py": "f8b36f410f5ed01a9c47ffb3d58b1617806dd9589a8552f76c1280f03c096884",
+  "tests/test_runner.py": "9b51c9651341ea213d454699669c132f07c710aaa1d578e13f3c53352a64bf2b"
+}

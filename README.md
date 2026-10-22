@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [Launch geometry diagnostics](projects/launch-geometry-diagnostics/) | Does occupancy-selected block size minimize measured latency? | Fixed baselines, exact oracle, launch-error recovery and worker runner; GPU validation pending |
 | [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Two NVIDIA L4 runs, exact oracle, event handoff, four sanitizers and 162 raw samples |
 | [Streaming transfer pipeline](projects/streaming-transfer-pipeline/) | When do pinned buffers and two streams improve complete H2D/kernel/D2H throughput? | Worker-reported GPU pass and raw CSV; detailed tool logs not archived |
 | [Reduction accuracy lab](projects/reduction-accuracy/) | What accuracy and execution cost follow from FP32 versus FP64 accumulation? | Worker-reported GPU pass, raw CSV and source hashes; detailed tool logs not archived |
@@ -20,6 +21,6 @@ Each project separates source/build validation from actual GPU correctness and p
 - GPU execution belongs on a Slurm compute allocation, not a login node.
 - Publish only observed measurements with device, toolkit, input, timing scope and source provenance.
 
-Next candidates: runtime/driver diagnostics, compiler regression minimization, launch-configuration limits, compiler resource diagnostics. Avoid repeating a topic without a new engineering question.
+Next candidates: runtime/driver diagnostics, compiler regression minimization, JIT-versus-AOT compatibility, shared-memory resource limits. Avoid repeating a topic without a new engineering question.
 
 The [CPU CI example](docs/cpu-ci-example.yml) is documentation, not an active workflow. CPU and GPU checks were executed directly; no GitHub Actions success is claimed.
