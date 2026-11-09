@@ -15,7 +15,6 @@ Each project separates source/build validation from actual GPU correctness and p
 
 ## Working agreement
 
-- Use descriptive topic directories, English code and documentation, and Korean chat reports.
 - Preserve existing work; check the index before choosing the next topic.
 - Pair implementation with correctness tests, a fair baseline, reproduction instructions, a developer tutorial and a product brief.
 - GPU execution belongs on a Slurm compute allocation, not a login node.
