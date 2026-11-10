@@ -1,0 +1,2 @@
+gpu=NVIDIA B200 cc=10.0 sms=148 l2_bytes=132644864
+PASS independent oracle, both variants, output guards

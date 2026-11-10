@@ -1,0 +1,9 @@
+==PROF== Connected to process 803286 (<repo>/projects/b200-hbm-triad/build/triad)
+==PROF== Disconnected from process 803286
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","803286","triad","127.0.0.1","scalar(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","dram__throughput.avg.pct_of_peak_sustained_elapsed","%","61.09"
+"0","803286","triad","127.0.0.1","scalar(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","165,984"
+"0","803286","triad","127.0.0.1","scalar(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","sm__throughput.avg.pct_of_peak_sustained_elapsed","%","21.91"
+"1","803286","triad","127.0.0.1","vectorized(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","dram__throughput.avg.pct_of_peak_sustained_elapsed","%","80.41"
+"1","803286","triad","127.0.0.1","vectorized(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","125,888"
+"1","803286","triad","127.0.0.1","vectorized(const float *, const float *, float *, unsigned long)","1","7","(256, 1, 1)","(2368, 1, 1)","0","10.0","Command line profiler metrics","sm__throughput.avg.pct_of_peak_sustained_elapsed","%","7.88"

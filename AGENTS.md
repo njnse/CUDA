@@ -8,4 +8,4 @@ Every project needs an independent CPU oracle, boundary/error checks, fair basel
 
 Target native sm_100 with a verified CUDA 12.8+ compiler and compatible driver. Check the actual device before GPU work and fail on a non-B200. Never run GPU workloads on login nodes. Record environment, source hashes, shapes, seeds, warmups, repetitions, timing scope, variability, sanitizer and profiler status separately. Profile separately from timed benchmarks.
 
-The existing server GPU worker polls main and publishes sanitized B200 results. Its presence does not mean a new project passed. Verify actual logs and remote files. Do not create additional schedulers or workers when an existing one is active.
+The existing server GPU worker migration to B200 is pending specific approval after automatic approval review blocked the persistent configuration change. Do not change or execute that persistent worker until approved. Individual B200 validation inside an allocation is authorized. Verify actual logs and remote files. Do not create additional schedulers or workers when an existing one is active.

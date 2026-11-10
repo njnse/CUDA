@@ -1,0 +1,15 @@
+{
+  "device": "NVIDIA B200, 580.178.04, 183359 MiB\n",
+  "compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0\n",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-lineinfo",
+    "-arch=sm_100"
+  ],
+  "seed": "deterministic modular pattern",
+  "warmup": 5,
+  "repetitions": 10,
+  "samples": 9,
+  "timing": "CUDA events; kernel launches only; excludes transfers, allocation, correctness and profiling"
+}
