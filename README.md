@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [B200 streaming triad](projects/b200-hbm-triad/) | Does vectorized access improve streaming bandwidth beyond cache capacity? | Native sm_100, independent oracle, tail guards, rotated samples and profiler; see project validation |
 | [Launch geometry diagnostics](projects/launch-geometry-diagnostics/) | Does occupancy-selected block size minimize measured latency? | Fixed baselines, exact oracle, launch-error recovery and worker runner; GPU validation pending |
 | [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Two NVIDIA L4 runs, exact oracle, event handoff, four sanitizers and 162 raw samples |
 | [Streaming transfer pipeline](projects/streaming-transfer-pipeline/) | When do pinned buffers and two streams improve complete H2D/kernel/D2H throughput? | Worker-reported GPU pass and raw CSV; detailed tool logs not archived |
@@ -14,6 +15,8 @@ Reproducible CUDA experiments for developer education and evidence-based product
 Each project separates source/build validation from actual GPU correctness and performance evidence. Never interpret an unexecuted benchmark as a result. The older `GPU-Computing` repository is separate and has not been migrated here.
 
 ## Working agreement
+
+New GPU execution exclusively uses **NVIDIA B200** with native `sm_100` and a compatible CUDA 12.8+ environment. Previous L4 results remain historical. See the [B200 workflow](docs/b200-workflow.md) and [daily ledger](docs/daily-ledger.md).
 
 - Preserve existing work; check the index before choosing the next topic.
 - Pair implementation with correctness tests, a fair baseline, reproduction instructions, a developer tutorial and a product brief.
