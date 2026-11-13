@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [B200 CUDA module load](projects/b200-module-load/) | How does the deployment image affect first module load on B200? | CPU oracle and CLI tests passed. GPU validation pending. |
 | [B200 streaming triad](projects/b200-hbm-triad/) | Does vectorized access improve streaming bandwidth beyond cache capacity? | Native sm_100, independent oracle, tail guards, rotated samples and profiler; see project validation |
 | [Launch geometry diagnostics](projects/launch-geometry-diagnostics/) | Does occupancy-selected block size minimize measured latency? | Fixed baselines, exact oracle, launch-error recovery and worker runner; GPU validation pending |
 | [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Two NVIDIA L4 runs, exact oracle, event handoff, four sanitizers and 162 raw samples |
