@@ -1,0 +1,10 @@
+==PROF== Connected to process 2684465 (<redacted>/repo/projects/elementwise-fusion/build/fusion)
+995.43457,144115203510894592
+==PROF== Disconnected from process 2684465
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","2684465","fusion","127.0.0.1","affine(const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_read.sum","byte","268,456,960"
+"0","2684465","fusion","127.0.0.1","affine(const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_write.sum","byte","225,720,832"
+"0","2684465","fusion","127.0.0.1","affine(const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","186,144"
+"1","2684465","fusion","127.0.0.1","combine(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_read.sum","byte","536,927,232"
+"1","2684465","fusion","127.0.0.1","combine(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_write.sum","byte","238,802,688"
+"1","2684465","fusion","127.0.0.1","combine(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","203,744"

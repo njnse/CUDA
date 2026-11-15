@@ -1,0 +1,7 @@
+==PROF== Connected to process 2684841 (<redacted>/repo/projects/elementwise-fusion/build/fusion)
+899.231506,144115203510894592
+==PROF== Disconnected from process 2684841
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","2684841","fusion","127.0.0.1","fused(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_read.sum","byte","536,901,120"
+"0","2684841","fusion","127.0.0.1","fused(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_write.sum","byte","241,773,056"
+"0","2684841","fusion","127.0.0.1","fused(const unsigned int *, const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(262144, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","208,480"

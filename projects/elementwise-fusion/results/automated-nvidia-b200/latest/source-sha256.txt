@@ -1,0 +1,3 @@
+071ee277a5efff3e149046c5674d5b3cff4ef06bc2db5a536bfb56c34da74f05  fusion.cu
+04d0eb1df55c91bfe019152be249561c34e1040bdc4da5f6bf38fc061ead958c  measure.py
+c41922fde8fe318eadca35727a99e1e609ac740e6b30e0c1ffaade62e7690c8a  scripts/run.sh
