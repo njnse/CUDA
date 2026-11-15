@@ -1,0 +1,1 @@
+gpu=NVIDIA B200 cc=10.0 runtime=12080 driver_api=13020 sm_count=148 warp_size=32 max_threads_per_sm=2048 kernel_registers=14 kernel_local_bytes=0 kernel_static_shared_bytes=0 occupancy_block=1024 occupancy_min_grid=296 seed=2027

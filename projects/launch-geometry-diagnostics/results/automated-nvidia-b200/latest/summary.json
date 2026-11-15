@@ -1,0 +1,572 @@
+[
+  {
+    "n": 257,
+    "rounds": 1,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 3,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00210559996776,
+            "min": 0.00204960000701,
+            "max": 0.00218720012344,
+            "iqr": 4.0000071750000143e-05
+          },
+          "host_ms": {
+            "median": 0.00254945,
+            "min": 0.00250595,
+            "max": 0.0027044,
+            "iqr": 3.754999999999991e-05
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 2,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.0020864000544,
+            "min": 0.00204319995828,
+            "max": 0.00213599996641,
+            "iqr": 4.4799875470000194e-05
+          },
+          "host_ms": {
+            "median": 0.0025178,
+            "min": 0.00248805,
+            "max": 0.00255385,
+            "iqr": 2.5300000000000235e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 1,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.0021023999434,
+            "min": 0.00196000002325,
+            "max": 0.00264640012756,
+            "iqr": 7.039983756999997e-05
+          },
+          "host_ms": {
+            "median": 0.0025477,
+            "min": 0.0023406,
+            "max": 0.00351995,
+            "iqr": 0.00010815
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 1,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00210079993121,
+            "min": 0.00207199994475,
+            "max": 0.00299199996516,
+            "iqr": 7.040007040000004e-05
+          },
+          "host_ms": {
+            "median": 0.00255545,
+            "min": 0.0024814,
+            "max": 0.0034182,
+            "iqr": 5.990000000000032e-05
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed256",
+    "occupancy_over_best_fixed_device_ms": 1.0069017812665564,
+    "fixed256_over_occupancy_device_ms": 0.9931455268081115,
+    "paired_occupancy_saving_device_ms": {
+      "min": -0.0009327998850500001,
+      "median": -1.1199852449999843e-05,
+      "max": 6.079999730000023e-05
+    }
+  },
+  {
+    "n": 257,
+    "rounds": 64,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 3,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00208320003003,
+            "min": 0.00200159987435,
+            "max": 0.00237599993125,
+            "iqr": 0.00023999996483999985
+          },
+          "host_ms": {
+            "median": 0.002525,
+            "min": 0.0024315,
+            "max": 0.00277385,
+            "iqr": 0.00018004999999999974
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 2,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00207359995693,
+            "min": 0.00203040009364,
+            "max": 0.00257920008153,
+            "iqr": 5.9199752290000057e-05
+          },
+          "host_ms": {
+            "median": 0.0024985,
+            "min": 0.00244365,
+            "max": 0.00303365,
+            "iqr": 4.944999999999993e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 1,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00207359995693,
+            "min": 0.00200799992308,
+            "max": 0.0021375999786,
+            "iqr": 3.679981454999962e-05
+          },
+          "host_ms": {
+            "median": 0.00249115,
+            "min": 0.0024402,
+            "max": 0.00278175,
+            "iqr": 7.000000000000018e-05
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 1,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.0020927998703,
+            "min": 0.00202240003273,
+            "max": 0.00261119985953,
+            "iqr": 0.0001967998687199997
+          },
+          "host_ms": {
+            "median": 0.00248265,
+            "min": 0.00241785,
+            "max": 0.0030235,
+            "iqr": 0.00015014999999999994
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed256",
+    "occupancy_over_best_fixed_device_ms": 1.0092592176739943,
+    "fixed256_over_occupancy_device_ms": 0.9908257288991289,
+    "paired_occupancy_saving_device_ms": {
+      "min": -0.0005375999026000001,
+      "median": 0.0,
+      "max": 0.00044640013948000004
+    }
+  },
+  {
+    "n": 65537,
+    "rounds": 1,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 513,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00214560003951,
+            "min": 0.00209919991903,
+            "max": 0.00298879994079,
+            "iqr": 0.00014719995670000024
+          },
+          "host_ms": {
+            "median": 0.00262375,
+            "min": 0.00255925,
+            "max": 0.00339995,
+            "iqr": 0.00013199999999999974
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 257,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00216799997725,
+            "min": 0.00213599996641,
+            "max": 0.00228640018031,
+            "iqr": 5.919998512000013e-05
+          },
+          "host_ms": {
+            "median": 0.0026357,
+            "min": 0.0025949,
+            "max": 0.00275405,
+            "iqr": 5.644999999999999e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 129,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00219039991498,
+            "min": 0.00183680001646,
+            "max": 0.00232640001923,
+            "iqr": 5.4399948570000006e-05
+          },
+          "host_ms": {
+            "median": 0.0026506,
+            "min": 0.0022946,
+            "max": 0.0027776,
+            "iqr": 7.315000000000012e-05
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 65,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00215520011261,
+            "min": 0.00187839998398,
+            "max": 0.00265599996783,
+            "iqr": 0.00010560010560000006
+          },
+          "host_ms": {
+            "median": 0.0026488,
+            "min": 0.0023509,
+            "max": 0.0030815,
+            "iqr": 0.00014500000000000016
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed128",
+    "occupancy_over_best_fixed_device_ms": 1.004474306917981,
+    "fixed256_over_occupancy_device_ms": 1.005939060862659,
+    "paired_occupancy_saving_device_ms": {
+      "min": -0.0004751998931200002,
+      "median": 6.400048729999792e-06,
+      "max": 0.0002895999932700001
+    }
+  },
+  {
+    "n": 65537,
+    "rounds": 64,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 513,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.0021023999434,
+            "min": 0.0020256000571,
+            "max": 0.00220160000026,
+            "iqr": 7.839989848999968e-05
+          },
+          "host_ms": {
+            "median": 0.0025699,
+            "min": 0.00248795,
+            "max": 0.00267895,
+            "iqr": 0.00011779999999999994
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 257,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00204479997046,
+            "min": 0.0019648000598,
+            "max": 0.0022143998649,
+            "iqr": 6.719981320999976e-05
+          },
+          "host_ms": {
+            "median": 0.00253305,
+            "min": 0.002451,
+            "max": 0.00314325,
+            "iqr": 9.274999999999995e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 129,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00204319995828,
+            "min": 0.00190079992171,
+            "max": 0.00214080000296,
+            "iqr": 3.0399998650000332e-05
+          },
+          "host_ms": {
+            "median": 0.00251525,
+            "min": 0.00234925,
+            "max": 0.0025972,
+            "iqr": 5.009999999999997e-05
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 65,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00207199994475,
+            "min": 0.00200319988653,
+            "max": 0.00213599996641,
+            "iqr": 3.679981455000005e-05
+          },
+          "host_ms": {
+            "median": 0.0025568,
+            "min": 0.00248015,
+            "max": 0.00260935,
+            "iqr": 2.705000000000025e-05
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed512",
+    "occupancy_over_best_fixed_device_ms": 1.0140955300793195,
+    "fixed256_over_occupancy_device_ms": 0.9868725989308451,
+    "paired_occupancy_saving_device_ms": {
+      "min": -0.0001711999066100001,
+      "median": 1.7599901180000068e-05,
+      "max": 0.00015199976041999986
+    }
+  },
+  {
+    "n": 1048576,
+    "rounds": 1,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 4736,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00446880003437,
+            "min": 0.00442240014672,
+            "max": 0.00454080011696,
+            "iqr": 2.8800219299999867e-05
+          },
+          "host_ms": {
+            "median": 0.00488935,
+            "min": 0.0048429,
+            "max": 0.0049523,
+            "iqr": 7.295000000000045e-05
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 4096,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00392640009522,
+            "min": 0.00386240007356,
+            "max": 0.00396479992196,
+            "iqr": 3.520026802999966e-05
+          },
+          "host_ms": {
+            "median": 0.004378,
+            "min": 0.0043287,
+            "max": 0.0043893,
+            "iqr": 4.9949999999999994e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 2048,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00366079993546,
+            "min": 0.00361920008436,
+            "max": 0.00371519988403,
+            "iqr": 4.1599851100000175e-05
+          },
+          "host_ms": {
+            "median": 0.00412525,
+            "min": 0.00407275,
+            "max": 0.00427625,
+            "iqr": 4.104999999999994e-05
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 1024,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00381279992871,
+            "min": 0.00372319994494,
+            "max": 0.00396639993414,
+            "iqr": 6.079999730000023e-05
+          },
+          "host_ms": {
+            "median": 0.0042357,
+            "min": 0.00417665,
+            "max": 0.0044464,
+            "iqr": 7.93500000000006e-05
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed512",
+    "occupancy_over_best_fixed_device_ms": 1.0415209779091357,
+    "fixed256_over_occupancy_device_ms": 1.0297944210643215,
+    "paired_occupancy_saving_device_ms": {
+      "min": -3.359979018000003e-05,
+      "median": 0.00011360016651999977,
+      "max": 0.0002144002355699997
+    }
+  },
+  {
+    "n": 1048576,
+    "rounds": 64,
+    "samples": 9,
+    "policies": {
+      "fixed128": {
+        "block": 128,
+        "grid": 4736,
+        "active_blocks_per_sm": 16,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00475039985031,
+            "min": 0.00467999977991,
+            "max": 0.00480320025235,
+            "iqr": 3.040023147999997e-05
+          },
+          "host_ms": {
+            "median": 0.0052076,
+            "min": 0.00515665,
+            "max": 0.0053386,
+            "iqr": 6.044999999999922e-05
+          }
+        }
+      },
+      "fixed256": {
+        "block": 256,
+        "grid": 4096,
+        "active_blocks_per_sm": 8,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00470399996266,
+            "min": 0.00464639998972,
+            "max": 0.00475839991122,
+            "iqr": 3.200024366000007e-05
+          },
+          "host_ms": {
+            "median": 0.0051514,
+            "min": 0.0050916,
+            "max": 0.0051996,
+            "iqr": 1.1249999999999975e-05
+          }
+        }
+      },
+      "fixed512": {
+        "block": 512,
+        "grid": 2048,
+        "active_blocks_per_sm": 4,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00475679989904,
+            "min": 0.00470399996266,
+            "max": 0.00517119979486,
+            "iqr": 2.720020710999995e-05
+          },
+          "host_ms": {
+            "median": 0.0051835,
+            "min": 0.0051399,
+            "max": 0.00562335,
+            "iqr": 4.965000000000004e-05
+          }
+        }
+      },
+      "occupancy": {
+        "block": 1024,
+        "grid": 1024,
+        "active_blocks_per_sm": 2,
+        "predicted_occupancy_fraction": 1.0,
+        "timings": {
+          "device_ms": {
+            "median": 0.00511519983411,
+            "min": 0.00506879994646,
+            "max": 0.00520000001416,
+            "iqr": 4.319986329000009e-05
+          },
+          "host_ms": {
+            "median": 0.00554735,
+            "min": 0.00551925,
+            "max": 0.00559255,
+            "iqr": 2.7749999999999997e-05
+          }
+        }
+      }
+    },
+    "best_observed_fixed_device_policy": "fixed256",
+    "occupancy_over_best_fixed_device_ms": 1.0874149393524817,
+    "fixed256_over_occupancy_device_ms": 0.9196121589017948,
+    "paired_occupancy_saving_device_ms": {
+      "min": -0.00055360002444,
+      "median": -0.0004015997983499997,
+      "max": -0.0003583999350699994
+    }
+  }
+]

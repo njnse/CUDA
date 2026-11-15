@@ -1,0 +1,20 @@
+{
+  "build_flags": [
+    "-std=c++17",
+    "-O3",
+    "-lineinfo",
+    "-arch=sm_100",
+    "-Iinclude",
+    "-Xcompiler=-Wall,-Wextra"
+  ],
+  "timing": {
+    "samples": 9,
+    "repetitions": 20,
+    "warmup": 5,
+    "seed": 2027,
+    "scope": "host wall and CUDA stream intervals per kernel; allocation, copies, poisoning, oracle and occupancy API queries excluded; launch gaps included"
+  },
+  "cuda_compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0",
+  "host_compiler": "g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-14)\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "gpu": "NVIDIA B200, 580.178.04, 183359 MiB"
+}

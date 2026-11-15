@@ -1,0 +1,8 @@
+test_empty (benchmark.ReferenceTests) ... ok
+test_first_value (benchmark.ReferenceTests) ... ok
+test_seed_and_skew (benchmark.ReferenceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

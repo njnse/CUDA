@@ -1,0 +1,3 @@
+========= COMPUTE-SANITIZER
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 257, "bytes": 8216, "module_ns": 225493, "lookup_ns": 17532, "launch_sync_ns": 367558}
+========= ERROR SUMMARY: 0 errors

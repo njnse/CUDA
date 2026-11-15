@@ -10,10 +10,10 @@
 
 Public logs, environment and source SHA-256 manifest are under `cloud-cpu/`. Probe outputs remain in ignored local results storage. Synthetic parser fixtures are not measurements. CPU checks do not establish CUDA compilation, GPU occupancy or launch-error recovery.
 
-## Pending GPU execution
+## GPU validation
 
-No CUDA compiler or GPU is available in this cloud. CUDA 12.4.131/GNU C++ 11.5 compilation, 40 normal GPU payload cases plus the separate rejected-launch recovery check, 216 benchmark samples, sanitizer execution and focused profiling are pending. No speedups, occupancy values or profiler measurements have been generated for this project.
+The experiment passed in a Slurm allocation with one NVIDIA B200, driver 580.178.04, CUDA 12.8.93, GCC 11.5.0 and native `sm_100`. Native compilation, the 40 GPU oracle cases, guards, input immutability, rejected-launch recovery, 216 benchmark samples, four Compute Sanitizer tools and the Nsight duration capture passed.
 
-Normal verification tests the expected invalid configuration outside sanitizer. Sanitizer quick mode runs only 16 positive payload cases. Optional tools must be reported individually; a core pass does not imply they all executed.
+At 1,048,576 elements, median CUDA-event intervals for the one-round kernel were 3.66 µs with a fixed 512-thread block and 3.81 µs with the occupancy recommendation. For 64 rounds, the fixed 256-thread block measured 4.70 µs and the recommendation measured 5.12 µs. The differences describe this run and include launch gaps in the stream interval. Inspect the archived ranges and paired observations before selecting a deployment policy.
 
-Completion requires actual `automated-nvidia-l4/latest/validation.json`, matching source hashes, raw CSV and verification/tool logs. Previous projects' GPU results are not reused.
+[Evidence](automated-nvidia-b200/latest/) contains raw samples, summary, environment, source hashes and verification logs. The source commit file identifies the checkout base. The source manifest identifies the exact files tested, including the updated B200 runner.

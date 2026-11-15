@@ -1,0 +1,36 @@
+{
+  "cubin": {
+    "module_ns": {
+      "median": 79415,
+      "min": 73375,
+      "max": 82873
+    },
+    "lookup_ns": {
+      "median": 9416,
+      "min": 7783,
+      "max": 10206
+    },
+    "launch_sync_ns": {
+      "median": 34304,
+      "min": 32374,
+      "max": 35811
+    }
+  },
+  "ptx": {
+    "module_ns": {
+      "median": 12004828,
+      "min": 11297949,
+      "max": 12397838
+    },
+    "lookup_ns": {
+      "median": 27532,
+      "min": 25670,
+      "max": 38299
+    },
+    "launch_sync_ns": {
+      "median": 35766,
+      "min": 32766,
+      "max": 41131
+    }
+  }
+}

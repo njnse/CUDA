@@ -1,0 +1,12 @@
+test_corrupt_evidence (test_analysis.AnalysisTests) ... ok
+test_heuristic_can_be_slower (test_analysis.AnalysisTests) ... ok
+test_matched_and_dispersion (test_analysis.AnalysisTests) ... ok
+test_schema (test_analysis.AnalysisTests) ... ok
+test_invalid_output (test_runner.RunnerConfigurationTests) ... ok
+test_manifest_scope (test_runner.RunnerConfigurationTests) ... ok
+test_preserve_existing_artifact (test_runner.RunnerConfigurationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.035s
+
+OK

@@ -1,0 +1,9 @@
+test_cli_rejects_invalid_length_before_cuda (test_probe.OracleTest) ... ok
+test_deterministic_inputs (test_probe.OracleTest) ... ok
+test_tail_guard_and_value_error (test_probe.OracleTest) ... ok
+test_wrap_and_index (test_probe.OracleTest) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.060s
+
+OK

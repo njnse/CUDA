@@ -1,0 +1,5 @@
+==PROF== Connected to process 766382 (/usr/bin/python3.9)
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 65537, "bytes": 1247, "module_ns": 9971199, "lookup_ns": 36246, "launch_sync_ns": 737093810}
+==PROF== Disconnected from process 766382
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","766382","python3.9","127.0.0.1","transform","1","7","(256, 1, 1)","(257, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","3,296"

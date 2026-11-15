@@ -1,4 +1,4 @@
-# B200 streaming triad
+# Streaming triad
 
 Question: does aligned float4 access improve `c = a + 2*b` over scalar coalesced access on B200, and how does the answer change beyond cache capacity?
 

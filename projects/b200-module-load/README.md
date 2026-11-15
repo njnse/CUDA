@@ -1,4 +1,4 @@
-# B200 CUDA module load: cubin versus PTX
+# CUDA module load: cubin versus PTX
 
 Measure how the choice of a native Blackwell cubin or driver-compiled PTX affects the first request to a CUDA module. Both images use the same integer transform and compiler optimization flags. Native `sm_100` cubin is the baseline. Generic `compute_100` PTX exercises driver JIT compilation. See the [Blackwell compatibility guide](https://docs.nvidia.com/cuda/archive/12.8.2/blackwell-compatibility-guide/index.html) and [Driver API module reference](https://docs.nvidia.com/cuda/cuda-driver-api/group__CUDA__MODULE.html).
 
@@ -18,8 +18,15 @@ Module timing excludes process and context creation, file reading, transfers and
 
 ## Engineering decision
 
-For a B200 service with a tight first-request budget, compare module-load and lookup medians and ranges before choosing a deployment image. Set the acceptance threshold from the service startup budget, then repeat with its real module and normal cache settings. Favor including a native cubin if the PTX path spends material startup budget on JIT. Evaluate retaining PTX against the deployment's architecture coverage and artifact size requirements. This microbenchmark cannot establish warm-cache behavior, sustained kernel throughput, or compatibility with another GPU or driver.
+For deployments that need low first-load latency on B200, include a native cubin when the startup budget cannot absorb the measured PTX compilation cost. Recheck with the production module and normal cache settings before deciding whether to ship PTX for architecture coverage. This run used a single small kernel, one device and one driver version with disk caching disabled.
 
 ## Validation status
 
-The local CPU suite passed four tests covering integer wraparound and index terms, deterministic inputs, tail guard failures, and rejection of out-of-range lengths. CUDA compilation, B200 correctness, performance, sanitizers and Nsight captures are pending. No GPU measurements have been recorded for this project.
+Both images compiled with CUDA 12.8.93 and passed all size, guard and missing-symbol checks on NVIDIA B200. Four CPU tests, four Compute Sanitizer tools per image and both Nsight captures passed.
+
+| Image | Median module load | Range across nine samples | Median launch and synchronization |
+|---|---:|---:|---:|
+| Native cubin | 79.4 µs | 73.4–82.9 µs | 34.3 µs |
+| PTX | 12.005 ms | 11.298–12.398 ms | 35.8 µs |
+
+The measured module-load median was about 151 times higher for PTX. Launch and synchronization were much closer after module loading. See the [raw data and tool logs](results/automated-nvidia-b200/latest/).

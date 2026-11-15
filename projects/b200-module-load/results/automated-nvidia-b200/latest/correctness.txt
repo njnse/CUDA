@@ -1,0 +1,10 @@
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 1, "bytes": 8216, "module_ns": 83757, "lookup_ns": 21260, "launch_sync_ns": 32862}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 255, "bytes": 8216, "module_ns": 82770, "lookup_ns": 21290, "launch_sync_ns": 31637}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 256, "bytes": 8216, "module_ns": 78466, "lookup_ns": 19435, "launch_sync_ns": 30624}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 257, "bytes": 8216, "module_ns": 81068, "lookup_ns": 19749, "launch_sync_ns": 32620}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 65537, "bytes": 8216, "module_ns": 84007, "lookup_ns": 19256, "launch_sync_ns": 103065}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 1, "bytes": 1247, "module_ns": 12398188, "lookup_ns": 43390, "launch_sync_ns": 33157}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 255, "bytes": 1247, "module_ns": 11591762, "lookup_ns": 39590, "launch_sync_ns": 32821}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 256, "bytes": 1247, "module_ns": 11903561, "lookup_ns": 46961, "launch_sync_ns": 32413}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 257, "bytes": 1247, "module_ns": 11565101, "lookup_ns": 40053, "launch_sync_ns": 31699}
+{"gpu": "NVIDIA B200", "driver_api": 13020, "n": 65537, "bytes": 1247, "module_ns": 11820194, "lookup_ns": 38351, "launch_sync_ns": 35217}

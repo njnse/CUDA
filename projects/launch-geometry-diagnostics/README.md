@@ -2,20 +2,20 @@
 
 **Question:** Does the block size recommended by CUDA's occupancy API minimize execution time, and what should a diagnostic distinguish between a legal launch, predicted occupancy and measured performance?
 
-The same grid-stride kernel runs with four policies: fixed block sizes 128, **256 (baseline)** and 512, and the result of `cudaOccupancyMaxPotentialBlockSize`. Inputs, output contract, arithmetic work and stream are matched. The recommended policy may duplicate a fixed block size; those labels then measure the same implementation separately, not independent algorithms. No faster policy is claimed before GPU execution.
+The same grid-stride kernel runs with four policies: fixed block sizes 128, **256 (baseline)** and 512, and the result of `cudaOccupancyMaxPotentialBlockSize`. Inputs, output contract, arithmetic work and stream are matched. Each label is timed separately even when the API selects a block size already represented in the sweep.
 
 ## Reproduce from the repository root
 
 ```bash
 bash projects/launch-geometry-diagnostics/scripts/test_cpu.sh
 # Inside an existing GPU allocation, with CUDA prepared externally:
-RESULTS_DIR=/path/to/fresh/results CUDA_ARCH=sm_89 \
+RESULTS_DIR=/path/to/fresh/results CUDA_ARCH=sm_100 \
   bash projects/launch-geometry-diagnostics/scripts/run.sh
 ```
 
 Use a fresh absolute `RESULTS_DIR`. The runner builds only beneath this project's `build/`, writes evidence beneath `RESULTS_DIR`, rejects existing artifact names and removes no previous outputs. It does not connect remotely, submit jobs, read credentials or change global settings. The caller prepares any `CUDA_MODULE`; the script does not load modules.
 
-Target: CUDA Toolkit 12.4.1 (`nvcc` 12.4.131), GNU C++ 11.5, C++17, one NVIDIA L4, two CPU cores and 8 GiB host memory. Flags: `-std=c++17 -O3 -lineinfo -arch=sm_89 -Iinclude -Xcompiler=-Wall,-Wextra`. `CXX` selects a host compiler and `CUDA_ARCH` selects an explicit target. Helpers use Python's standard library. Target CUDA compilation and GPU validation remain pending until actual worker evidence exists.
+Run in a Slurm allocation with one NVIDIA B200 and CUDA 12.8 or later. Build flags are `-std=c++17 -O3 -lineinfo -arch=sm_100 -Iinclude -Xcompiler=-Wall,-Wextra`. `CXX` selects a host compiler. Helpers use Python's standard library.
 
 ## What the experiment isolates
 
@@ -43,11 +43,13 @@ The sweep uses lengths 257, 65,537 and 1,048,576, both round counts and all four
 
 ## Worker and evidence
 
-`run.sh` executes CPU compilation/oracle/tests → CUDA build → unknown-mode rejection → diagnostics → normal GPU correctness/recovery → benchmark/analysis → available Compute Sanitizer tools → available focused Nsight Compute attempt. Core failures and available sanitizer failures return nonzero. Missing tools and denied/unsupported/timed-out profiling are explicit, never passing. Subprocess limits fit the 25-minute allocation; actual target duration has not been measured.
+On the measured B200, the occupancy API selected 1,024 threads per block. The fastest fixed policy varied with input size and work per element. At 1,048,576 elements, the one-round kernel ran in 3.66 µs with a fixed block of 512 versus 3.81 µs with the API recommendation. With 64 rounds, a fixed block of 256 ran in 4.70 µs versus 5.12 µs. Use the API recommendation as a starting point, then check it against measured choices at representative shapes.
+
+`run.sh` executes CPU compilation and oracle tests, CUDA build, CLI and launch-error checks, normal GPU correctness, benchmarks, four Compute Sanitizer tools, and a focused Nsight Compute counter capture. The runner returns nonzero when a required check or tool fails.
 
 The results directory contains validation state, source commit/hashes, environment/build flags, application/tool logs, raw CSV and summary. Known operational absolute paths and host identity in tool output are replaced by neutral markers; numerical data is unchanged. No binary profiler report is published.
 
-[Validation record](results/validation.md) lists actual cloud checks and pending GPU work. Completion requires an actual `results/automated-nvidia-l4/latest/validation.json` plus matching raw CSV and correctness/tool logs. Prior projects' results are not reused.
+[Validation record](results/validation.md) lists the evidence and environment for this project.
 
 See the [tutorial](docs/tutorial.md), [engineering/product analysis](docs/engineering-analysis.md) and [profiling protocol](docs/profiling.md).
 

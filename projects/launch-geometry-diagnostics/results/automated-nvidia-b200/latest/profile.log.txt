@@ -1,0 +1,11 @@
+==PROF== Connected to process 782629 (<project>/build/run-ymqo3qbl/geometry_lab)
+==PROF== Profiling "transform": 0%....50%....100% - 1 pass
+==PROF== Disconnected from process 782629
+[782629] geometry_lab@127.0.0.1
+  transform(const unsigned int *, unsigned int *, unsigned long, unsigned int) (65, 1, 1)x(1024, 1, 1), Context 1, Stream 13, Device 0, CC 10.0
+    Section: Command line profiler metrics
+    ---------------------- ----------- ------------
+    Metric Name            Metric Unit Metric Value
+    ---------------------- ----------- ------------
+    gpu__time_duration.sum          us         3.78
+    ---------------------- ----------- ------------

@@ -4,7 +4,6 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import re
 import shutil
 import socket
 import subprocess
@@ -78,8 +77,9 @@ def main():
         commit = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=PROJECT,
                                 capture_output=True, text=True, check=False, timeout=10)
         write('source-commit.txt', commit.stdout.strip()+'\n' if commit.returncode==0 else 'unavailable\n')
-        arch = os.environ.get('CUDA_ARCH', 'sm_89')
-        if not re.fullmatch(r'sm_[0-9]{2,3}', arch): raise ValueError('invalid CUDA_ARCH')
+        arch = os.environ.get('CUDA_ARCH', 'sm_100')
+        if arch != 'sm_100': raise ValueError('CUDA_ARCH must be sm_100')
+        if not os.environ.get('SLURM_JOB_ID'): raise ValueError('Slurm allocation required')
         cxx = os.environ.get('CXX', 'g++')
         # One executable name/path only, no shell expansion or injected arguments.
         common = ['-std=c++17', '-O3', '-Iinclude']
@@ -105,6 +105,9 @@ def main():
                 missing.append(args[0])
         write('environment.json',json.dumps(metadata,indent=2)+'\n')
         if missing: raise RuntimeError('required GPU environment tool unavailable: '+', '.join(missing))
+        devices = metadata['gpu'].splitlines()
+        if len(devices) != 1 or devices[0].split(',')[0].strip() != 'NVIDIA B200':
+            raise RuntimeError('exactly one NVIDIA B200 is required')
         run(['nvcc', *flags, '-ccbin', cxx, 'src/geometry.cu','-o',relative_build+'/geometry_lab'], 'build.log', timeout=180)
         binary = './'+relative_build+'/geometry_lab'
         run([binary,'--bad-mode'], 'cli-tests.log', expect=1)
@@ -128,7 +131,8 @@ def main():
             try:
                 proc = subprocess.run(args,cwd=PROJECT,capture_output=True,text=True,timeout=120,check=False)
                 write('profile.log',proc.stdout+proc.stderr)
-                state['profiling'] = 'completed_attempt' if proc.returncode==0 else 'unavailable_or_denied'
+                state['profiling'] = ('completed_attempt' if proc.returncode == 0
+                                      and 'gpu__time_duration.sum' in proc.stdout else 'unavailable_or_denied')
                 state['profiler_exit_code'] = proc.returncode
             except subprocess.TimeoutExpired:
                 write('profile.log','Profiler timed out; no completed counter capture.\n')
@@ -136,6 +140,8 @@ def main():
             # Validate the same focused path uninstrumented even if counters are denied.
             run([binary,'--profile'],'profile-application.log')
         else: state['profiling'] = 'unavailable'
+        if any(value != 'passed' for value in state['sanitizers'].values()) or state['profiling'] != 'completed_attempt':
+            raise RuntimeError('required sanitizer or profiler evidence missing')
         state['status'] = 'passed'
         return 0
     except Exception as exc:

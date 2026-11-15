@@ -1,0 +1,1 @@
+24 GPU oracle comparisons and 3 invalid-input checks passed

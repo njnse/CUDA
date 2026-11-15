@@ -4,10 +4,10 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
-| [B200 histogram](projects/b200-histogram/) | How do skew and batch size affect global versus shared-memory atomics? | CPU oracle tests passed. GPU validation pending. |
-| [B200 CUDA module load](projects/b200-module-load/) | How does the deployment image affect first module load on B200? | CPU oracle and CLI tests passed. GPU validation pending. |
-| [B200 streaming triad](projects/b200-hbm-triad/) | Does vectorized access improve streaming bandwidth beyond cache capacity? | Native sm_100, independent oracle, tail guards, rotated samples and profiler; see project validation |
-| [Launch geometry diagnostics](projects/launch-geometry-diagnostics/) | Does occupancy-selected block size minimize measured latency? | Fixed baselines, exact oracle, launch-error recovery and worker runner; GPU validation pending |
+| [Histogram under atomic contention](projects/b200-histogram/) | How do skew and batch size affect global versus shared-memory atomics? | GPU oracle, benchmark, sanitizer and Nsight pass. Block-local median 0.202 ms on 128 MiB hot input. |
+| [CUDA module load](projects/b200-module-load/) | How does the deployment image affect first module load? | GPU validation passed. Median module load was 79.4 µs for cubin and 12.0 ms for PTX with disk caching disabled. |
+| [Streaming triad](projects/b200-hbm-triad/) | Does vectorized access improve streaming bandwidth beyond cache capacity? | Native sm_100, independent oracle, tail guards, rotated samples and profiler; see project validation |
+| [Launch geometry diagnostics](projects/launch-geometry-diagnostics/) | Does occupancy-selected block size minimize measured latency? | GPU oracle, launch-error recovery, sanitizer and Nsight pass. Fixed block sizes led the measured sweep. |
 | [Async allocation lifetime](projects/async-allocation-lifetime/) | How do pool retention and event-ordered lifetimes affect allocation cost and reserved memory? | Two NVIDIA L4 runs, exact oracle, event handoff, four sanitizers and 162 raw samples |
 | [Streaming transfer pipeline](projects/streaming-transfer-pipeline/) | When do pinned buffers and two streams improve complete H2D/kernel/D2H throughput? | Worker-reported GPU pass and raw CSV; detailed tool logs not archived |
 | [Reduction accuracy lab](projects/reduction-accuracy/) | What accuracy and execution cost follow from FP32 versus FP64 accumulation? | Worker-reported GPU pass, raw CSV and source hashes; detailed tool logs not archived |
