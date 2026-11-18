@@ -1,0 +1,1 @@
+PASS 36 CPU/GPU exact membership comparisons and three invalid inputs

@@ -1,0 +1,5 @@
+==PROF== Connected to process 1093116 (<redacted>/build/compact)
+768.900024,1048576
+==PROF== Disconnected from process 1093116
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","1093116","compact","127.0.0.1","direct(const unsigned int *, unsigned int, unsigned int, unsigned int *, unsigned int *)","1","7","(256, 1, 1)","(4096, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","25,408"

@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [Warp-aggregated stream compaction](projects/warp-compaction/) | Does explicit warp aggregation improve unordered filtering at different selectivities? | GPU validation passed. Large-input medians differed by less than 0.14% across all tested selectivities. |
 | [Elementwise kernel fusion](projects/elementwise-fusion/) | What does removing an intermediate buffer save for two consecutive transforms? | GPU validation passed. At 67.1M elements, fusion was 1.88× faster with 38% less profiled DRAM traffic. |
 | [Histogram under atomic contention](projects/b200-histogram/) | How do skew and batch size affect global versus shared-memory atomics? | GPU oracle, benchmark, sanitizer and Nsight pass. Block-local median 0.202 ms on 128 MiB hot input. |
 | [CUDA module load](projects/b200-module-load/) | How does the deployment image affect first module load? | GPU validation passed. Median module load was 79.4 µs for cubin and 12.0 ms for PTX with disk caching disabled. |
