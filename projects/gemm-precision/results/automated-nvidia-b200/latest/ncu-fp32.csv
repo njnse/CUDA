@@ -1,0 +1,5 @@
+==PROF== Connected to process 3307038 (<redacted>/build/gemm)
+953.678894,3.15510952e-05,7.09498833e-07,64,120804
+==PROF== Disconnected from process 3307038
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","3307038","gemm","127.0.0.1","cutlass3x_sm100_simt_sgemm_f32_f32_f32_f32_f32_64x64x16_1x1x1_3_nnn_align1_bias_f32_relu","1","7","(128, 1, 1)","(32, 32, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","331,488"

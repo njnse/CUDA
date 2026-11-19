@@ -1,0 +1,7 @@
+{"mode": "fp32", "shape": [1, 1, 1], "ms": 0.00921600033, "max_abs": 2.39580231e-08, "relative_l2": 2.61955376e-08, "probes": 1, "cublas": 120804}
+{"mode": "fp32", "shape": [31, 29, 33], "ms": 0.0108160004, "max_abs": 1.52274637e-06, "relative_l2": 1.09005645e-07, "probes": 899, "cublas": 120804}
+{"mode": "fp32", "shape": [129, 127, 65], "ms": 0.0122880004, "max_abs": 2.70930738e-06, "relative_l2": 1.45467141e-07, "probes": 16383, "cublas": 120804}
+{"mode": "tf32", "shape": [1, 1, 1], "ms": 0.00886400044, "max_abs": 2.39580231e-08, "relative_l2": 2.61955376e-08, "probes": 1, "cublas": 120804}
+{"mode": "tf32", "shape": [31, 29, 33], "ms": 0.0102080004, "max_abs": 0.0016134181, "relative_l2": 0.000254061904, "probes": 899, "cublas": 120804}
+{"mode": "tf32", "shape": [129, 127, 65], "ms": 0.0106880004, "max_abs": 0.0029143197, "relative_l2": 0.000264163784, "probes": 16383, "cublas": 120804}
+PASS six full-matrix oracle comparisons and three invalid inputs
