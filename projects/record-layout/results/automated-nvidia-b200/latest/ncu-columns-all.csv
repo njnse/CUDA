@@ -1,0 +1,6 @@
+==PROF== Connected to process 2532592 (<redacted>/build/project)
+785.568909,36028827102261836
+==PROF== Disconnected from process 2532592
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","2532592","project","127.0.0.1","void project<1, 1>(const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(65537, 1, 1)","0","10.0","Command line profiler metrics","dram__bytes_read.sum","byte","536,898,048"
+"0","2532592","project","127.0.0.1","void project<1, 1>(const unsigned int *, unsigned int *, unsigned int)","1","7","(256, 1, 1)","(65537, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","89,216"

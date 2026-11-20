@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [Record layout and field selection](projects/record-layout/) | How do interleaved records and contiguous columns compare when reading one field or all eight? | GPU validation passed. At 16.8M records, a one-field column scan was 1.72× faster with 87.5% fewer profiled DRAM read bytes. |
 | [cuBLAS GEMM precision tradeoff](projects/gemm-precision/) | How do strict FP32 and TF32-enabled GEMM trade latency for numerical error? | GPU validation passed. At order 4,096, TF32 was 12.09× faster with sampled relative L2 error of 2.49e-4. |
 | [Warp-aggregated stream compaction](projects/warp-compaction/) | Does explicit warp aggregation improve unordered filtering at different selectivities? | GPU validation passed. Large-input medians differed by less than 0.14% across all tested selectivities. |
 | [Elementwise kernel fusion](projects/elementwise-fusion/) | What does removing an intermediate buffer save for two consecutive transforms? | GPU validation passed. At 67.1M elements, fusion was 1.88× faster with 38% less profiled DRAM traffic. |
