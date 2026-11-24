@@ -1,0 +1,50 @@
+[
+  {
+    "width": 257,
+    "height": 259,
+    "mode": "direct",
+    "median_ms": 0.00307733348,
+    "min_ms": 0.00254399997,
+    "max_ms": 0.00316799991
+  },
+  {
+    "width": 257,
+    "height": 259,
+    "mode": "tiled",
+    "median_ms": 0.00309333329,
+    "min_ms": 0.0026826666,
+    "max_ms": 0.0031520001
+  },
+  {
+    "width": 2049,
+    "height": 2051,
+    "mode": "direct",
+    "median_ms": 0.0112693335,
+    "min_ms": 0.0112640001,
+    "max_ms": 0.0112693335
+  },
+  {
+    "width": 2049,
+    "height": 2051,
+    "mode": "tiled",
+    "median_ms": 0.013653333,
+    "min_ms": 0.0136479996,
+    "max_ms": 0.0137333336
+  },
+  {
+    "width": 8193,
+    "height": 8193,
+    "mode": "direct",
+    "median_ms": 0.222720007,
+    "min_ms": 0.222352008,
+    "max_ms": 0.222720007
+  },
+  {
+    "width": 8193,
+    "height": 8193,
+    "mode": "tiled",
+    "median_ms": 0.241488,
+    "min_ms": 0.241488,
+    "max_ms": 0.241823991
+  }
+]

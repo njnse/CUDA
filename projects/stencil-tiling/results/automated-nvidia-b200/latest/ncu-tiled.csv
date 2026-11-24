@@ -1,0 +1,6 @@
+==PROF== Connected to process 779322 (<redacted>/build/stencil)
+840.390991,144133430754337392
+==PROF== Disconnected from process 779322
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","779322","stencil","127.0.0.1","tiled(const unsigned int *, unsigned int *, int, int)","1","7","(32, 8, 1)","(257, 1025, 1)","0","10.0","Command line profiler metrics","dram__bytes_read.sum","byte","268,514,816"
+"0","779322","stencil","127.0.0.1","tiled(const unsigned int *, unsigned int *, int, int)","1","7","(32, 8, 1)","(257, 1025, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","242,368"

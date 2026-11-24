@@ -11,3 +11,4 @@ Calendar: America/New_York. At most one new topic each day. Existing topics may 
 | 2026-11-17 | warp-compaction | Does explicit warp aggregation improve unordered filtering at different selectivities? |
 | 2026-11-18 | gemm-precision | How do strict FP32 and TF32-enabled GEMM trade latency for numerical error? |
 | 2026-11-19 | record-layout | How do interleaved records and contiguous columns compare when reading one field or all eight? |
+| 2026-11-24 | stencil-tiling | Does staging neighboring cells reduce latency or DRAM reads for a single stencil sweep? |
