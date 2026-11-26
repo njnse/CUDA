@@ -1,0 +1,6 @@
+==PROF== Connected to process 625811 (<redacted>/build/budget)
+882.123474,9007213348981318,1
+==PROF== Disconnected from process 625811
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","625811","budget","127.0.0.1","transform(const unsigned int *, unsigned int *, unsigned int, unsigned int)","1","7","(256, 1, 1)","(16385, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","127,520"
+"0","625811","budget","127.0.0.1","transform(const unsigned int *, unsigned int *, unsigned int, unsigned int)","1","7","(256, 1, 1)","(16385, 1, 1)","0","10.0","Command line profiler metrics","sm__warps_active.avg.pct_of_peak_sustained_active","%","12.23"

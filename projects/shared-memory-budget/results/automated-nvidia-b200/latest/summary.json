@@ -1,0 +1,37 @@
+[
+  {
+    "dynamic_bytes": 256,
+    "median_ms": 0.0209813341,
+    "min_ms": 0.0208159996,
+    "max_ms": 0.0209920009,
+    "resident_blocks_per_sm": 8
+  },
+  {
+    "dynamic_bytes": 32768,
+    "median_ms": 0.0223573322,
+    "min_ms": 0.0221866667,
+    "max_ms": 0.0223573322,
+    "resident_blocks_per_sm": 6
+  },
+  {
+    "dynamic_bytes": 65536,
+    "median_ms": 0.0348106672,
+    "min_ms": 0.0346186658,
+    "max_ms": 0.034821334,
+    "resident_blocks_per_sm": 3
+  },
+  {
+    "dynamic_bytes": 114688,
+    "median_ms": 0.0489813338,
+    "min_ms": 0.048949331,
+    "max_ms": 0.0491520017,
+    "resident_blocks_per_sm": 2
+  },
+  {
+    "dynamic_bytes": 196608,
+    "median_ms": 0.0918186704,
+    "min_ms": 0.0916426678,
+    "max_ms": 0.0918239951,
+    "resident_blocks_per_sm": 1
+  }
+]

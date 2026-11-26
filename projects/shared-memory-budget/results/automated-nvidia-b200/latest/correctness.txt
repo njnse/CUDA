@@ -1,0 +1,2 @@
+PASS opt-in above device limit rejected with cudaErrorInvalidValue
+PASS 10 complete oracle and guard cases and four invalid CLI inputs
