@@ -13,3 +13,4 @@ Calendar: America/New_York. At most one new topic each day. Existing topics may 
 | 2026-11-19 | record-layout | How do interleaved records and contiguous columns compare when reading one field or all eight? |
 | 2026-11-24 | stencil-tiling | Does staging neighboring cells reduce latency or DRAM reads for a single stencil sweep? |
 | 2026-11-25 | shared-memory-budget | How does shared-memory reservation affect residency and latency when the kernel does the same work? |
+| 2026-11-26 | batched-small-gemm | How much latency does a strided batched call save versus launching small GEMMs one by one? |

@@ -1,0 +1,5 @@
+==PROF== Connected to process 1909266 (<redacted>/build/batch)
+4.0457921,-841,257,120804
+==PROF== Disconnected from process 1909266
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","1909266","batch","127.0.0.1","cutlass3x_sm100_simt_sgemm_f32_f32_f32_f32_f32_32x32x16_1x1x1_3_nnn_align1_bias_f32_relu","1","7","(64, 1, 1)","(1, 1, 1)","0","10.0","Command line profiler metrics","gpu__time_duration.sum","ns","4,928"

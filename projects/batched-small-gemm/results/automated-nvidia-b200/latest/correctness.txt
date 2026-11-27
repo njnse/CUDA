@@ -1,0 +1,9 @@
+{"mode": "loop", "shape": [1, 1, 1, 1], "ms": 0.0098240003, "checksum": 18, "probes": 1, "cublas": 120804}
+{"mode": "strided", "shape": [1, 1, 1, 1], "ms": 0.00995200034, "checksum": 18, "probes": 1, "cublas": 120804}
+{"mode": "loop", "shape": [3, 5, 7, 3], "ms": 0.0189759992, "checksum": 101, "probes": 45, "cublas": 120804}
+{"mode": "strided", "shape": [3, 5, 7, 3], "ms": 0.0128640002, "checksum": 101, "probes": 45, "cublas": 120804}
+{"mode": "loop", "shape": [17, 19, 23, 5], "ms": 0.0276800003, "checksum": 1303, "probes": 1615, "cublas": 120804}
+{"mode": "strided", "shape": [17, 19, 23, 5], "ms": 0.0118720001, "checksum": 1303, "probes": 1615, "cublas": 120804}
+{"mode": "loop", "shape": [32, 32, 32, 8], "ms": 0.0416960008, "checksum": -30433, "probes": 8192, "cublas": 120804}
+{"mode": "strided", "shape": [32, 32, 32, 8], "ms": 0.0122880004, "checksum": -30433, "probes": 8192, "cublas": 120804}
+PASS eight complete integer-oracle and guard comparisons, four invalid-input checks

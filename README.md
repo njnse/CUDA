@@ -4,6 +4,7 @@ Reproducible CUDA experiments for developer education and evidence-based product
 
 | Project | Engineering question | Evidence |
 |---|---|---|
+| [Batched small matrix multiplication](projects/batched-small-gemm/) | How much latency does a strided batched call save versus launching small GEMMs one by one? | GPU validation passed. A batch of 1,024 order-32 GEMMs fell from 5.453 ms to 8.971 µs on prepacked data. |
 | [Dynamic shared-memory budget and block residency](projects/shared-memory-budget/) | How does shared-memory reservation affect residency and latency when the kernel does the same work? | GPU validation passed. At 192 KiB per block, achieved occupancy was 12.23% and latency was 4.38× the 256 B baseline. |
 | [Shared-memory tiling for a five-point stencil](projects/stencil-tiling/) | Does staging neighboring cells reduce latency or DRAM reads for a single stencil sweep? | GPU validation passed. At 8,193×8,193, tiling took 8.4% longer with nearly identical profiled DRAM reads. |
 | [Record layout and field selection](projects/record-layout/) | How do interleaved records and contiguous columns compare when reading one field or all eight? | GPU validation passed. At 16.8M records, a one-field column scan was 1.72× faster with 87.5% fewer profiled DRAM read bytes. |
